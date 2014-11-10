@@ -211,6 +211,15 @@
 		A099CBCA1A0B6CFB00313401 /* GPUImagePicture+TextureSubimage.m in Sources */ = {isa = PBXBuildFile; fileRef = A099CB241A0B6CFB00313401 /* GPUImagePicture+TextureSubimage.m */; };
 		A099CBCB1A0B6CFB00313401 /* GPUImagePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = A099CB261A0B6CFB00313401 /* GPUImagePicture.m */; };
 		A099CBCC1A0B6CFB00313401 /* GPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A099CB281A0B6CFB00313401 /* GPUImageView.m */; };
+		A0B719EB1A1091E200E0C47C /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719D51A1091E200E0C47C /* MASCompositeConstraint.m */; };
+		A0B719EC1A1091E200E0C47C /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719D81A1091E200E0C47C /* MASConstraint.m */; };
+		A0B719ED1A1091E200E0C47C /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719DA1A1091E200E0C47C /* MASConstraintMaker.m */; };
+		A0B719EE1A1091E200E0C47C /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719DC1A1091E200E0C47C /* MASLayoutConstraint.m */; };
+		A0B719EF1A1091E200E0C47C /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E01A1091E200E0C47C /* MASViewAttribute.m */; };
+		A0B719F01A1091E200E0C47C /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E21A1091E200E0C47C /* MASViewConstraint.m */; };
+		A0B719F11A1091E200E0C47C /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E41A1091E200E0C47C /* NSArray+MASAdditions.m */; };
+		A0B719F21A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E71A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		A0B719F31A1091E200E0C47C /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E91A1091E200E0C47C /* View+MASAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -632,6 +641,29 @@
 		A099CB261A0B6CFB00313401 /* GPUImagePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImagePicture.m; sourceTree = "<group>"; };
 		A099CB271A0B6CFB00313401 /* GPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageView.h; sourceTree = "<group>"; };
 		A099CB281A0B6CFB00313401 /* GPUImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageView.m; sourceTree = "<group>"; };
+		A0B719D41A1091E200E0C47C /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		A0B719D51A1091E200E0C47C /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		A0B719D61A1091E200E0C47C /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		A0B719D71A1091E200E0C47C /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		A0B719D81A1091E200E0C47C /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		A0B719D91A1091E200E0C47C /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		A0B719DA1A1091E200E0C47C /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		A0B719DB1A1091E200E0C47C /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		A0B719DC1A1091E200E0C47C /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		A0B719DD1A1091E200E0C47C /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		A0B719DE1A1091E200E0C47C /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		A0B719DF1A1091E200E0C47C /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		A0B719E01A1091E200E0C47C /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		A0B719E11A1091E200E0C47C /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		A0B719E21A1091E200E0C47C /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		A0B719E31A1091E200E0C47C /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		A0B719E41A1091E200E0C47C /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		A0B719E51A1091E200E0C47C /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		A0B719E61A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		A0B719E71A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		A0B719E81A1091E200E0C47C /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		A0B719E91A1091E200E0C47C /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		A0B719EA1A1091E200E0C47C /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -725,6 +757,7 @@
 				A02E4AC31A0B74D500D4E4D8 /* TDCameraView.m */,
 				A099C76B1A0B6B6800313401 /* DBCamera */,
 				A099C9DC1A0B6CFA00313401 /* GPUImage */,
+				A0B719D31A1091E200E0C47C /* Masonry */,
 			);
 			path = TDCamera;
 			sourceTree = "<group>";
@@ -1214,6 +1247,37 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
+		A0B719D31A1091E200E0C47C /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				A0B719D41A1091E200E0C47C /* MASCompositeConstraint.h */,
+				A0B719D51A1091E200E0C47C /* MASCompositeConstraint.m */,
+				A0B719D61A1091E200E0C47C /* MASConstraint+Private.h */,
+				A0B719D71A1091E200E0C47C /* MASConstraint.h */,
+				A0B719D81A1091E200E0C47C /* MASConstraint.m */,
+				A0B719D91A1091E200E0C47C /* MASConstraintMaker.h */,
+				A0B719DA1A1091E200E0C47C /* MASConstraintMaker.m */,
+				A0B719DB1A1091E200E0C47C /* MASLayoutConstraint.h */,
+				A0B719DC1A1091E200E0C47C /* MASLayoutConstraint.m */,
+				A0B719DD1A1091E200E0C47C /* Masonry.h */,
+				A0B719DE1A1091E200E0C47C /* MASUtilities.h */,
+				A0B719DF1A1091E200E0C47C /* MASViewAttribute.h */,
+				A0B719E01A1091E200E0C47C /* MASViewAttribute.m */,
+				A0B719E11A1091E200E0C47C /* MASViewConstraint.h */,
+				A0B719E21A1091E200E0C47C /* MASViewConstraint.m */,
+				A0B719E31A1091E200E0C47C /* NSArray+MASAdditions.h */,
+				A0B719E41A1091E200E0C47C /* NSArray+MASAdditions.m */,
+				A0B719E51A1091E200E0C47C /* NSArray+MASShorthandAdditions.h */,
+				A0B719E61A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.h */,
+				A0B719E71A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.m */,
+				A0B719E81A1091E200E0C47C /* View+MASAdditions.h */,
+				A0B719E91A1091E200E0C47C /* View+MASAdditions.m */,
+				A0B719EA1A1091E200E0C47C /* View+MASShorthandAdditions.h */,
+			);
+			name = Masonry;
+			path = TDCamera/Masonry;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1350,6 +1414,8 @@
 				A099C7C21A0B6B6800313401 /* DBLibraryManager.m in Sources */,
 				A099CBB51A0B6CFB00313401 /* GPUImageThresholdedNonMaximumSuppressionFilter.m in Sources */,
 				A099CB2B1A0B6CFB00313401 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
+				A0B719EE1A1091E200E0C47C /* MASLayoutConstraint.m in Sources */,
+				A0B719EC1A1091E200E0C47C /* MASConstraint.m in Sources */,
 				A099CB4F1A0B6CFB00313401 /* GPUImageExclusionBlendFilter.m in Sources */,
 				A099CB561A0B6CFB00313401 /* GPUImageFramebuffer.m in Sources */,
 				A099CBA71A0B6CFB00313401 /* GPUImageSobelEdgeDetectionFilter.m in Sources */,
@@ -1358,6 +1424,7 @@
 				A099CB321A0B6CFB00313401 /* GPUImageBilateralFilter.m in Sources */,
 				A099CB9E1A0B6CFB00313401 /* GPUImageSaturationBlendFilter.m in Sources */,
 				A02E4AC71A0B777400D4E4D8 /* TDMainView.m in Sources */,
+				A0B719EB1A1091E200E0C47C /* MASCompositeConstraint.m in Sources */,
 				A099C7B61A0B6B6800313401 /* DBCameraContainerViewController.m in Sources */,
 				A099CB801A0B6CFB00313401 /* GPUImageMosaicFilter.m in Sources */,
 				A099CB911A0B6CFB00313401 /* GPUImagePixellatePositionFilter.m in Sources */,
@@ -1368,6 +1435,7 @@
 				A099CBA91A0B6CFB00313401 /* GPUImageSoftLightBlendFilter.m in Sources */,
 				A099CB9B1A0B6CFB00313401 /* GPUImageRGBErosionFilter.m in Sources */,
 				A099CBAA1A0B6CFB00313401 /* GPUImageSolidColorGenerator.m in Sources */,
+				A0B719F01A1091E200E0C47C /* MASViewConstraint.m in Sources */,
 				A099CBBB1A0B6CFB00313401 /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
 				A099C7AF1A0B6B6800313401 /* CustomCamera.m in Sources */,
 				A099CB701A0B6CFB00313401 /* GPUImageLaplacianFilter.m in Sources */,
@@ -1410,6 +1478,7 @@
 				A099CB691A0B6CFB00313401 /* GPUImageHueBlendFilter.m in Sources */,
 				A099C7CC1A0B6B6800313401 /* DBCameraView.m in Sources */,
 				A099CBC11A0B6CFB00313401 /* GPUImageVideoCamera.m in Sources */,
+				A0B719ED1A1091E200E0C47C /* MASConstraintMaker.m in Sources */,
 				A099CB501A0B6CFB00313401 /* GPUImageExposureFilter.m in Sources */,
 				A099CB421A0B6CFB00313401 /* GPUImageContrastFilter.m in Sources */,
 				A099CB521A0B6CFB00313401 /* GPUImageFASTCornerDetectionFilter.m in Sources */,
@@ -1425,6 +1494,7 @@
 				A099CBB91A0B6CFB00313401 /* GPUImageToonFilter.m in Sources */,
 				A099CB391A0B6CFB00313401 /* GPUImageChromaKeyBlendFilter.m in Sources */,
 				A099C7B51A0B6B6800313401 /* DBCameraCollectionViewController.m in Sources */,
+				A0B719F11A1091E200E0C47C /* NSArray+MASAdditions.m in Sources */,
 				A099CBCC1A0B6CFB00313401 /* GPUImageView.m in Sources */,
 				A099C7B71A0B6B6800313401 /* DBCameraLibraryViewController.m in Sources */,
 				A099CBAE1A0B6CFB00313401 /* GPUImageStretchDistortionFilter.m in Sources */,
@@ -1463,6 +1533,7 @@
 				A099CB951A0B6CFB00313401 /* GPUImagePosterizeFilter.m in Sources */,
 				A099CB571A0B6CFB00313401 /* GPUImageFramebufferCache.m in Sources */,
 				A099CB2A1A0B6CFB00313401 /* GPUImage3x3ConvolutionFilter.m in Sources */,
+				A0B719F21A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				A099CB5F1A0B6CFB00313401 /* GPUImageHardLightBlendFilter.m in Sources */,
 				A099CB2F1A0B6CFB00313401 /* GPUImageAmatorkaFilter.m in Sources */,
 				A099CBC31A0B6CFB00313401 /* GPUImageVoronoiConsumerFilter.m in Sources */,
@@ -1477,8 +1548,10 @@
 				A099C6E01A0B67EE00313401 /* main.m in Sources */,
 				A099CB5E1A0B6CFB00313401 /* GPUImageHalftoneFilter.m in Sources */,
 				A099CB821A0B6CFB00313401 /* GPUImageMotionDetector.m in Sources */,
+				A0B719EF1A1091E200E0C47C /* MASViewAttribute.m in Sources */,
 				A099CB2D1A0B6CFB00313401 /* GPUImageAddBlendFilter.m in Sources */,
 				A099CB3E1A0B6CFB00313401 /* GPUImageColorDodgeBlendFilter.m in Sources */,
+				A0B719F31A1091E200E0C47C /* View+MASAdditions.m in Sources */,
 				A099CBA81A0B6CFB00313401 /* GPUImageSoftEleganceFilter.m in Sources */,
 				A099CB4B1A0B6CFB00313401 /* GPUImageDissolveBlendFilter.m in Sources */,
 				A099CB8A1A0B6CFB00313401 /* GPUImageOpeningFilter.m in Sources */,
