@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "TDCameraViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<TDCameraViewControllerDelegate>
 
 @end
 
@@ -22,6 +23,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)takePhoto:(UIButton *)sender {
+    [self presentViewController:[[TDCameraViewController alloc]initWithDelegate:self] animated:YES completion:nil];
+}
+
+#pragma mark - TDCameraViewControllerDelegate
+
+- (void) camera:(id)cameraViewController didFinishWithImageArray:(NSArray *)images withMetadata:(NSDictionary *)metadata{
+    
+}
+- (void) dismissCamera:(id)cameraViewController{
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

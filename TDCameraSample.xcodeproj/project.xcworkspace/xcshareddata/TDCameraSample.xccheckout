@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F5C4668F-81C2-46C3-BC50-314A4B05CEC5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TDCameraSample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6632D2F39773996CE344781906281F72920430DA</key>
+		<string>https://github.com/623637646/TDCamera.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TDCameraSample.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6632D2F39773996CE344781906281F72920430DA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/623637646/TDCamera.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6632D2F39773996CE344781906281F72920430DA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6632D2F39773996CE344781906281F72920430DA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TDCameraSample</string>
+		</dict>
+	</array>
+</dict>
+</plist>

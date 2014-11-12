@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A02E4AC11A0B740500D4E4D8 /* TDCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A02E4AC01A0B740500D4E4D8 /* TDCameraViewController.m */; };
 		A02E4AC41A0B74D500D4E4D8 /* TDCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = A02E4AC31A0B74D500D4E4D8 /* TDCameraView.m */; };
-		A02E4AC71A0B777400D4E4D8 /* TDMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = A02E4AC61A0B777400D4E4D8 /* TDMainView.m */; };
 		A03E493B1A10A6C80064923C /* BlocksKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03E48EC1A10A6C80064923C /* BlocksKit-Info.plist */; };
 		A03E493C1A10A6C80064923C /* NSArray+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E48F11A10A6C80064923C /* NSArray+BlocksKit.m */; };
 		A03E493D1A10A6C80064923C /* NSDictionary+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E48F31A10A6C80064923C /* NSDictionary+BlocksKit.m */; };
@@ -46,6 +45,7 @@
 		A03E495C1A10A6C80064923C /* UITextField+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E49361A10A6C80064923C /* UITextField+BlocksKit.m */; };
 		A03E495D1A10A6C80064923C /* UIView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E49381A10A6C80064923C /* UIView+BlocksKit.m */; };
 		A03E495E1A10A6C80064923C /* UIWebView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E493A1A10A6C80064923C /* UIWebView+BlocksKit.m */; };
+		A06797EF1A120564008AC9D8 /* TDDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = A06797EE1A120564008AC9D8 /* TDDotView.m */; };
 		A099C6E01A0B67EE00313401 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C6DF1A0B67EE00313401 /* main.m */; };
 		A099C6E31A0B67EE00313401 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C6E21A0B67EE00313401 /* AppDelegate.m */; };
 		A099C6E61A0B67EE00313401 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C6E51A0B67EE00313401 /* ViewController.m */; };
@@ -53,7 +53,6 @@
 		A099C6EB1A0B67EE00313401 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A099C6EA1A0B67EE00313401 /* Images.xcassets */; };
 		A099C6EE1A0B67EE00313401 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A099C6EC1A0B67EE00313401 /* LaunchScreen.xib */; };
 		A099C6FA1A0B67EE00313401 /* TDCameraSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C6F91A0B67EE00313401 /* TDCameraSampleTests.m */; };
-		A099C7AF1A0B6B6800313401 /* CustomCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C76A1A0B6B6800313401 /* CustomCamera.m */; };
 		A099C7B01A0B6B6800313401 /* UIImage+Asset.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C76F1A0B6B6800313401 /* UIImage+Asset.m */; };
 		A099C7B11A0B6B6800313401 /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C7711A0B6B6800313401 /* UIImage+Crop.m */; };
 		A099C7B21A0B6B6800313401 /* UIImage+TintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C7731A0B6B6800313401 /* UIImage+TintColor.m */; };
@@ -273,8 +272,6 @@
 		A02E4AC01A0B740500D4E4D8 /* TDCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCameraViewController.m; sourceTree = "<group>"; };
 		A02E4AC21A0B74D500D4E4D8 /* TDCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCameraView.h; sourceTree = "<group>"; };
 		A02E4AC31A0B74D500D4E4D8 /* TDCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCameraView.m; sourceTree = "<group>"; };
-		A02E4AC51A0B777400D4E4D8 /* TDMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMainView.h; sourceTree = "<group>"; };
-		A02E4AC61A0B777400D4E4D8 /* TDMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMainView.m; sourceTree = "<group>"; };
 		A03E48E91A10A6C80064923C /* BlocksKit+MessageUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlocksKit+MessageUI.h"; sourceTree = "<group>"; };
 		A03E48EA1A10A6C80064923C /* BlocksKit+QuickLook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlocksKit+QuickLook.h"; sourceTree = "<group>"; };
 		A03E48EB1A10A6C80064923C /* BlocksKit+UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlocksKit+UIKit.h"; sourceTree = "<group>"; };
@@ -351,6 +348,8 @@
 		A03E49381A10A6C80064923C /* UIView+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BlocksKit.m"; sourceTree = "<group>"; };
 		A03E49391A10A6C80064923C /* UIWebView+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+BlocksKit.h"; sourceTree = "<group>"; };
 		A03E493A1A10A6C80064923C /* UIWebView+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+BlocksKit.m"; sourceTree = "<group>"; };
+		A06797ED1A120564008AC9D8 /* TDDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDotView.h; sourceTree = "<group>"; };
+		A06797EE1A120564008AC9D8 /* TDDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDotView.m; sourceTree = "<group>"; };
 		A099C6DA1A0B67EE00313401 /* TDCameraSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDCameraSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A099C6DE1A0B67EE00313401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A099C6DF1A0B67EE00313401 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -364,8 +363,6 @@
 		A099C6F31A0B67EE00313401 /* TDCameraSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDCameraSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A099C6F81A0B67EE00313401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A099C6F91A0B67EE00313401 /* TDCameraSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDCameraSampleTests.m; sourceTree = "<group>"; };
-		A099C7691A0B6B6800313401 /* CustomCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCamera.h; sourceTree = "<group>"; };
-		A099C76A1A0B6B6800313401 /* CustomCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCamera.m; sourceTree = "<group>"; };
 		A099C76D1A0B6B6800313401 /* DBCameraBaseCropViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBCameraBaseCropViewController+Private.h"; sourceTree = "<group>"; };
 		A099C76E1A0B6B6800313401 /* UIImage+Asset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Asset.h"; sourceTree = "<group>"; };
 		A099C76F1A0B6B6800313401 /* UIImage+Asset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Asset.m"; sourceTree = "<group>"; };
@@ -990,12 +987,10 @@
 		A099C7681A0B6B6800313401 /* TDCamera */ = {
 			isa = PBXGroup;
 			children = (
-				A099C7691A0B6B6800313401 /* CustomCamera.h */,
-				A099C76A1A0B6B6800313401 /* CustomCamera.m */,
 				A02E4ABF1A0B740500D4E4D8 /* TDCameraViewController.h */,
 				A02E4AC01A0B740500D4E4D8 /* TDCameraViewController.m */,
-				A02E4AC51A0B777400D4E4D8 /* TDMainView.h */,
-				A02E4AC61A0B777400D4E4D8 /* TDMainView.m */,
+				A06797ED1A120564008AC9D8 /* TDDotView.h */,
+				A06797EE1A120564008AC9D8 /* TDDotView.m */,
 				A02E4AC21A0B74D500D4E4D8 /* TDCameraView.h */,
 				A02E4AC31A0B74D500D4E4D8 /* TDCameraView.m */,
 				A099C76B1A0B6B6800313401 /* DBCamera */,
@@ -1676,7 +1671,6 @@
 				A099C7B41A0B6B6800313401 /* DBCameraBaseCropViewController.m in Sources */,
 				A099CB321A0B6CFB00313401 /* GPUImageBilateralFilter.m in Sources */,
 				A099CB9E1A0B6CFB00313401 /* GPUImageSaturationBlendFilter.m in Sources */,
-				A02E4AC71A0B777400D4E4D8 /* TDMainView.m in Sources */,
 				A0B719EB1A1091E200E0C47C /* MASCompositeConstraint.m in Sources */,
 				A099C7B61A0B6B6800313401 /* DBCameraContainerViewController.m in Sources */,
 				A099CB801A0B6CFB00313401 /* GPUImageMosaicFilter.m in Sources */,
@@ -1692,7 +1686,6 @@
 				A099CBAA1A0B6CFB00313401 /* GPUImageSolidColorGenerator.m in Sources */,
 				A0B719F01A1091E200E0C47C /* MASViewConstraint.m in Sources */,
 				A099CBBB1A0B6CFB00313401 /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
-				A099C7AF1A0B6B6800313401 /* CustomCamera.m in Sources */,
 				A099CB701A0B6CFB00313401 /* GPUImageLaplacianFilter.m in Sources */,
 				A099CB781A0B6CFB00313401 /* GPUImageLuminanceRangeFilter.m in Sources */,
 				A099C6E31A0B67EE00313401 /* AppDelegate.m in Sources */,
@@ -1716,6 +1709,7 @@
 				A099CBC91A0B6CFB00313401 /* GPUImageMovieWriter.m in Sources */,
 				A099CB841A0B6CFB00313401 /* GPUImageMovieComposition.m in Sources */,
 				A099CBC21A0B6CFB00313401 /* GPUImageVignetteFilter.m in Sources */,
+				A06797EF1A120564008AC9D8 /* TDDotView.m in Sources */,
 				A099C7C51A0B6B6800313401 /* DBCollectionViewFlowLayout.m in Sources */,
 				A099CB411A0B6CFB00313401 /* GPUImageColorPackingFilter.m in Sources */,
 				A099CB3C1A0B6CFB00313401 /* GPUImageColorBlendFilter.m in Sources */,
