@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A026624C1A132A91000F97A9 /* UIImage+Blurring.m in Sources */ = {isa = PBXBuildFile; fileRef = A02662321A132A91000F97A9 /* UIImage+Blurring.m */; };
+		A026624D1A132A91000F97A9 /* UIImage+Enhancing.m in Sources */ = {isa = PBXBuildFile; fileRef = A02662341A132A91000F97A9 /* UIImage+Enhancing.m */; };
+		A026624E1A132A91000F97A9 /* UIImage+Filtering.m in Sources */ = {isa = PBXBuildFile; fileRef = A02662361A132A91000F97A9 /* UIImage+Filtering.m */; };
+		A026624F1A132A91000F97A9 /* UIImage+Masking.m in Sources */ = {isa = PBXBuildFile; fileRef = A02662381A132A91000F97A9 /* UIImage+Masking.m */; };
+		A02662501A132A91000F97A9 /* UIImage+Reflection.m in Sources */ = {isa = PBXBuildFile; fileRef = A026623A1A132A91000F97A9 /* UIImage+Reflection.m */; };
+		A02662511A132A91000F97A9 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = A026623C1A132A91000F97A9 /* UIImage+Resizing.m */; };
+		A02662521A132A91000F97A9 /* UIImage+Rotating.m in Sources */ = {isa = PBXBuildFile; fileRef = A026623E1A132A91000F97A9 /* UIImage+Rotating.m */; };
+		A02662531A132A91000F97A9 /* UIImage+Saving.m in Sources */ = {isa = PBXBuildFile; fileRef = A02662401A132A91000F97A9 /* UIImage+Saving.m */; };
+		A02662541A132A91000F97A9 /* UIScrollView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = A02662421A132A91000F97A9 /* UIScrollView+Screenshot.m */; };
+		A02662551A132A91000F97A9 /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = A02662441A132A91000F97A9 /* UIView+Screenshot.m */; };
+		A02662561A132A91000F97A9 /* NYXProgressiveImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A02662471A132A91000F97A9 /* NYXProgressiveImageView.m */; };
+		A02662571A132A91000F97A9 /* NYXImagesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A026624A1A132A91000F97A9 /* NYXImagesHelper.m */; };
 		A02E4AC11A0B740500D4E4D8 /* TDCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A02E4AC01A0B740500D4E4D8 /* TDCameraViewController.m */; };
 		A02E4AC41A0B74D500D4E4D8 /* TDCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = A02E4AC31A0B74D500D4E4D8 /* TDCameraView.m */; };
 		A03E493B1A10A6C80064923C /* BlocksKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03E48EC1A10A6C80064923C /* BlocksKit-Info.plist */; };
@@ -268,6 +280,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A02662311A132A91000F97A9 /* UIImage+Blurring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blurring.h"; sourceTree = "<group>"; };
+		A02662321A132A91000F97A9 /* UIImage+Blurring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blurring.m"; sourceTree = "<group>"; };
+		A02662331A132A91000F97A9 /* UIImage+Enhancing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Enhancing.h"; sourceTree = "<group>"; };
+		A02662341A132A91000F97A9 /* UIImage+Enhancing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Enhancing.m"; sourceTree = "<group>"; };
+		A02662351A132A91000F97A9 /* UIImage+Filtering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Filtering.h"; sourceTree = "<group>"; };
+		A02662361A132A91000F97A9 /* UIImage+Filtering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Filtering.m"; sourceTree = "<group>"; };
+		A02662371A132A91000F97A9 /* UIImage+Masking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Masking.h"; sourceTree = "<group>"; };
+		A02662381A132A91000F97A9 /* UIImage+Masking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Masking.m"; sourceTree = "<group>"; };
+		A02662391A132A91000F97A9 /* UIImage+Reflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Reflection.h"; sourceTree = "<group>"; };
+		A026623A1A132A91000F97A9 /* UIImage+Reflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Reflection.m"; sourceTree = "<group>"; };
+		A026623B1A132A91000F97A9 /* UIImage+Resizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
+		A026623C1A132A91000F97A9 /* UIImage+Resizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
+		A026623D1A132A91000F97A9 /* UIImage+Rotating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotating.h"; sourceTree = "<group>"; };
+		A026623E1A132A91000F97A9 /* UIImage+Rotating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotating.m"; sourceTree = "<group>"; };
+		A026623F1A132A91000F97A9 /* UIImage+Saving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Saving.h"; sourceTree = "<group>"; };
+		A02662401A132A91000F97A9 /* UIImage+Saving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Saving.m"; sourceTree = "<group>"; };
+		A02662411A132A91000F97A9 /* UIScrollView+Screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Screenshot.h"; sourceTree = "<group>"; };
+		A02662421A132A91000F97A9 /* UIScrollView+Screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Screenshot.m"; sourceTree = "<group>"; };
+		A02662431A132A91000F97A9 /* UIView+Screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Screenshot.h"; sourceTree = "<group>"; };
+		A02662441A132A91000F97A9 /* UIView+Screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Screenshot.m"; sourceTree = "<group>"; };
+		A02662461A132A91000F97A9 /* NYXProgressiveImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYXProgressiveImageView.h; sourceTree = "<group>"; };
+		A02662471A132A91000F97A9 /* NYXProgressiveImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYXProgressiveImageView.m; sourceTree = "<group>"; };
+		A02662491A132A91000F97A9 /* NYXImagesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYXImagesHelper.h; sourceTree = "<group>"; };
+		A026624A1A132A91000F97A9 /* NYXImagesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYXImagesHelper.m; sourceTree = "<group>"; };
+		A026624B1A132A91000F97A9 /* NYXImagesKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYXImagesKit.h; sourceTree = "<group>"; };
 		A02E4ABF1A0B740500D4E4D8 /* TDCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCameraViewController.h; sourceTree = "<group>"; };
 		A02E4AC01A0B740500D4E4D8 /* TDCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCameraViewController.m; sourceTree = "<group>"; };
 		A02E4AC21A0B74D500D4E4D8 /* TDCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCameraView.h; sourceTree = "<group>"; };
@@ -793,6 +830,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A026622F1A132A91000F97A9 /* NYXImagesKit */ = {
+			isa = PBXGroup;
+			children = (
+				A02662301A132A91000F97A9 /* Categories */,
+				A02662451A132A91000F97A9 /* Classes */,
+				A02662481A132A91000F97A9 /* Helper */,
+			);
+			path = NYXImagesKit;
+			sourceTree = "<group>";
+		};
+		A02662301A132A91000F97A9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A02662311A132A91000F97A9 /* UIImage+Blurring.h */,
+				A02662321A132A91000F97A9 /* UIImage+Blurring.m */,
+				A02662331A132A91000F97A9 /* UIImage+Enhancing.h */,
+				A02662341A132A91000F97A9 /* UIImage+Enhancing.m */,
+				A02662351A132A91000F97A9 /* UIImage+Filtering.h */,
+				A02662361A132A91000F97A9 /* UIImage+Filtering.m */,
+				A02662371A132A91000F97A9 /* UIImage+Masking.h */,
+				A02662381A132A91000F97A9 /* UIImage+Masking.m */,
+				A02662391A132A91000F97A9 /* UIImage+Reflection.h */,
+				A026623A1A132A91000F97A9 /* UIImage+Reflection.m */,
+				A026623B1A132A91000F97A9 /* UIImage+Resizing.h */,
+				A026623C1A132A91000F97A9 /* UIImage+Resizing.m */,
+				A026623D1A132A91000F97A9 /* UIImage+Rotating.h */,
+				A026623E1A132A91000F97A9 /* UIImage+Rotating.m */,
+				A026623F1A132A91000F97A9 /* UIImage+Saving.h */,
+				A02662401A132A91000F97A9 /* UIImage+Saving.m */,
+				A02662411A132A91000F97A9 /* UIScrollView+Screenshot.h */,
+				A02662421A132A91000F97A9 /* UIScrollView+Screenshot.m */,
+				A02662431A132A91000F97A9 /* UIView+Screenshot.h */,
+				A02662441A132A91000F97A9 /* UIView+Screenshot.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		A02662451A132A91000F97A9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A02662461A132A91000F97A9 /* NYXProgressiveImageView.h */,
+				A02662471A132A91000F97A9 /* NYXProgressiveImageView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A02662481A132A91000F97A9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A02662491A132A91000F97A9 /* NYXImagesHelper.h */,
+				A026624A1A132A91000F97A9 /* NYXImagesHelper.m */,
+				A026624B1A132A91000F97A9 /* NYXImagesKit.h */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		A03E48E81A10A6C80064923C /* BlocksKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -993,6 +1086,7 @@
 				A06797EE1A120564008AC9D8 /* TDDotView.m */,
 				A02E4AC21A0B74D500D4E4D8 /* TDCameraView.h */,
 				A02E4AC31A0B74D500D4E4D8 /* TDCameraView.m */,
+				A026622F1A132A91000F97A9 /* NYXImagesKit */,
 				A099C76B1A0B6B6800313401 /* DBCamera */,
 				A099C9DC1A0B6CFA00313401 /* GPUImage */,
 				A0B719D31A1091E200E0C47C /* Masonry */,
@@ -1643,6 +1737,7 @@
 				A099CB3F1A0B6CFB00313401 /* GPUImageColorInvertFilter.m in Sources */,
 				A099CB661A0B6CFB00313401 /* GPUImageHistogramGenerator.m in Sources */,
 				A099CB351A0B6CFB00313401 /* GPUImageBuffer.m in Sources */,
+				A02662541A132A91000F97A9 /* UIScrollView+Screenshot.m in Sources */,
 				A099CB751A0B6CFB00313401 /* GPUImageLocalBinaryPatternFilter.m in Sources */,
 				A03E49581A10A6C80064923C /* UIControl+BlocksKit.m in Sources */,
 				A099CB431A0B6CFB00313401 /* GPUImageCropFilter.m in Sources */,
@@ -1658,10 +1753,12 @@
 				A099CBC01A0B6CFB00313401 /* GPUImageUnsharpMaskFilter.m in Sources */,
 				A099CB8F1A0B6CFB00313401 /* GPUImagePinchDistortionFilter.m in Sources */,
 				A099C7C21A0B6B6800313401 /* DBLibraryManager.m in Sources */,
+				A02662551A132A91000F97A9 /* UIView+Screenshot.m in Sources */,
 				A099CBB51A0B6CFB00313401 /* GPUImageThresholdedNonMaximumSuppressionFilter.m in Sources */,
 				A099CB2B1A0B6CFB00313401 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				A0B719EE1A1091E200E0C47C /* MASLayoutConstraint.m in Sources */,
 				A0B719EC1A1091E200E0C47C /* MASConstraint.m in Sources */,
+				A02662531A132A91000F97A9 /* UIImage+Saving.m in Sources */,
 				A099CB4F1A0B6CFB00313401 /* GPUImageExclusionBlendFilter.m in Sources */,
 				A03E49401A10A6C80064923C /* NSMapTable+BlocksKit.m in Sources */,
 				A099CB561A0B6CFB00313401 /* GPUImageFramebuffer.m in Sources */,
@@ -1706,13 +1803,16 @@
 				A099CB331A0B6CFB00313401 /* GPUImageBoxBlurFilter.m in Sources */,
 				A099C7B91A0B6B6800313401 /* DBCameraViewController.m in Sources */,
 				A099CB981A0B6CFB00313401 /* GPUImageRawDataOutput.m in Sources */,
+				A02662571A132A91000F97A9 /* NYXImagesHelper.m in Sources */,
 				A099CBC91A0B6CFB00313401 /* GPUImageMovieWriter.m in Sources */,
 				A099CB841A0B6CFB00313401 /* GPUImageMovieComposition.m in Sources */,
 				A099CBC21A0B6CFB00313401 /* GPUImageVignetteFilter.m in Sources */,
 				A06797EF1A120564008AC9D8 /* TDDotView.m in Sources */,
 				A099C7C51A0B6B6800313401 /* DBCollectionViewFlowLayout.m in Sources */,
+				A02662561A132A91000F97A9 /* NYXProgressiveImageView.m in Sources */,
 				A099CB411A0B6CFB00313401 /* GPUImageColorPackingFilter.m in Sources */,
 				A099CB3C1A0B6CFB00313401 /* GPUImageColorBlendFilter.m in Sources */,
+				A02662511A132A91000F97A9 /* UIImage+Resizing.m in Sources */,
 				A099CBA31A0B6CFB00313401 /* GPUImageShiTomasiFeatureDetectionFilter.m in Sources */,
 				A099CB601A0B6CFB00313401 /* GPUImageHarrisCornerDetectionFilter.m in Sources */,
 				A099CBAD1A0B6CFB00313401 /* GPUImageStillCamera.m in Sources */,
@@ -1748,6 +1848,7 @@
 				A099CBAC1A0B6CFB00313401 /* GPUImageSphereRefractionFilter.m in Sources */,
 				A099CB2C1A0B6CFB00313401 /* GPUImageAdaptiveThresholdFilter.m in Sources */,
 				A099CBB91A0B6CFB00313401 /* GPUImageToonFilter.m in Sources */,
+				A02662501A132A91000F97A9 /* UIImage+Reflection.m in Sources */,
 				A099CB391A0B6CFB00313401 /* GPUImageChromaKeyBlendFilter.m in Sources */,
 				A099C7B51A0B6B6800313401 /* DBCameraCollectionViewController.m in Sources */,
 				A0B719F11A1091E200E0C47C /* NSArray+MASAdditions.m in Sources */,
@@ -1759,11 +1860,13 @@
 				A03E493E1A10A6C80064923C /* NSIndexSet+BlocksKit.m in Sources */,
 				A099C7CB1A0B6B6800313401 /* DBCameraLoadingView.m in Sources */,
 				A099CB471A0B6CFB00313401 /* GPUImageDifferenceBlendFilter.m in Sources */,
+				A026624F1A132A91000F97A9 /* UIImage+Masking.m in Sources */,
 				A099CB941A0B6CFB00313401 /* GPUImagePolkaDotFilter.m in Sources */,
 				A099CB711A0B6CFB00313401 /* GPUImageLevelsFilter.m in Sources */,
 				A099CB881A0B6CFB00313401 /* GPUImageNormalBlendFilter.m in Sources */,
 				A099CBBF1A0B6CFB00313401 /* GPUImageUIElement.m in Sources */,
 				A099C7C81A0B6B6800313401 /* DBCameraCropView.m in Sources */,
+				A026624D1A132A91000F97A9 /* UIImage+Enhancing.m in Sources */,
 				A099CBB01A0B6CFB00313401 /* GPUImageSwirlFilter.m in Sources */,
 				A099CB851A0B6CFB00313401 /* GPUImageMultiplyBlendFilter.m in Sources */,
 				A03E49501A10A6C80064923C /* NSObject+A2BlockDelegate.m in Sources */,
@@ -1784,6 +1887,7 @@
 				A099CB811A0B6CFB00313401 /* GPUImageMotionBlurFilter.m in Sources */,
 				A099CBBA1A0B6CFB00313401 /* GPUImageTransformFilter.m in Sources */,
 				A03E49411A10A6C80064923C /* NSMutableArray+BlocksKit.m in Sources */,
+				A026624C1A132A91000F97A9 /* UIImage+Blurring.m in Sources */,
 				A03E49561A10A6C80064923C /* UIAlertView+BlocksKit.m in Sources */,
 				A099CB6D1A0B6CFB00313401 /* GPUImageKuwaharaFilter.m in Sources */,
 				A099CB4D1A0B6CFB00313401 /* GPUImageEmbossFilter.m in Sources */,
@@ -1818,6 +1922,7 @@
 				A0B719EF1A1091E200E0C47C /* MASViewAttribute.m in Sources */,
 				A099CB2D1A0B6CFB00313401 /* GPUImageAddBlendFilter.m in Sources */,
 				A099CB3E1A0B6CFB00313401 /* GPUImageColorDodgeBlendFilter.m in Sources */,
+				A026624E1A132A91000F97A9 /* UIImage+Filtering.m in Sources */,
 				A0B719F31A1091E200E0C47C /* View+MASAdditions.m in Sources */,
 				A03E49471A10A6C80064923C /* NSObject+BKBlockExecution.m in Sources */,
 				A099CBA81A0B6CFB00313401 /* GPUImageSoftEleganceFilter.m in Sources */,
@@ -1833,6 +1938,7 @@
 				A03E49521A10A6C80064923C /* MFMailComposeViewController+BlocksKit.m in Sources */,
 				A099CBB21A0B6CFB00313401 /* GPUImageTextureOutput.m in Sources */,
 				A099CBA41A0B6CFB00313401 /* GPUImageSingleComponentGaussianBlurFilter.m in Sources */,
+				A02662521A132A91000F97A9 /* UIImage+Rotating.m in Sources */,
 				A03E495B1A10A6C80064923C /* UIPopoverController+BlocksKit.m in Sources */,
 				A099CBB31A0B6CFB00313401 /* GPUImageThreeInputFilter.m in Sources */,
 				A099CBA21A0B6CFB00313401 /* GPUImageSharpenFilter.m in Sources */,
