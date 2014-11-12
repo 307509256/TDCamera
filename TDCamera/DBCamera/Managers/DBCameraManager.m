@@ -134,7 +134,7 @@
     
     [_stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection
                                                   completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
-         [captureSessionBlock stopRunning];
+//         [captureSessionBlock stopRunning];
          
          if ( imageDataSampleBuffer != NULL ) {
              NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
