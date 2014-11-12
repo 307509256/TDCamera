@@ -47,4 +47,14 @@
     
     return cameraView;
 }
+
+- (void) drawFocusBoxAtPointOfInterest:(CGPoint)point andRemove:(BOOL)remove
+{
+    [super draw:self.focusExposeBox atPointOfInterest:point andRemove:remove];
+}
+
+- (void) drawExposeBoxAtPointOfInterest:(CGPoint)point andRemove:(BOOL)remove
+{
+    [super draw:self.focusExposeBox atPointOfInterest:point andRemove:remove];
+}
 @end
