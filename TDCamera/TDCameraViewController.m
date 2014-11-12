@@ -11,6 +11,7 @@
 #import "Masonry.h"
 #import "BlocksKit+UIKit.h"
 #import "TDDotView.h"
+//#import "NYXImagesKit.h"
 
 // 相机视图高度占屏幕的比率
 #define TD_CAMERA_VIEW_HEIGHT_MULTIPLY 0.7
@@ -20,6 +21,8 @@
 @interface TDCameraViewController ()<DBCameraViewControllerDelegate>
 @property (weak,nonatomic) id<TDCameraViewControllerDelegate> delegate_td;
 @property (nonatomic) NSMutableArray* images;
+
+@property (weak,nonatomic) TDDotView* dotView;
 @end
 
 @implementation TDCameraViewController
@@ -31,6 +34,7 @@
     if (self) {
         self.delegate_td = delegate;
         self.images = [NSMutableArray arrayWithCapacity:TD_IMAGE_COUNT];
+        self.useCameraSegue = NO;
     }
     return self;
 }
@@ -66,6 +70,9 @@
     [topBar addSubview:nextButton];
     [nextButton setTitle:@"下一步" forState:UIControlStateNormal];
     [nextButton bk_whenTapped:^{
+        if (self.images.count == 0) {
+            return;
+        }
         if ([self.delegate_td respondsToSelector:@selector(camera:didFinishWithImageArray:withMetadata:)] )
             [self.delegate_td camera:self didFinishWithImageArray:self.images withMetadata:nil];
     }];
@@ -99,7 +106,11 @@
     [bottomBar addSubview:backButton];
     [backButton setTitle:@"撤销" forState:UIControlStateNormal];
     [backButton bk_whenTapped:^{
-       
+        if (self.images.count == 0) {
+            return;
+        }
+        [self.images removeLastObject];
+        [self updateDotView];
     }];
     [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(bottomBar.mas_centerY);
@@ -115,6 +126,7 @@
         make.height.equalTo(bottomBar.mas_height);
     }];
     dotContentView.backgroundColor = [UIColor clearColor];
+    self.dotView = dotContentView;
     // 拍照按钮区域
     UIView* takePhotoView = [[UIView alloc] init];
     [self.view addSubview:takePhotoView];
@@ -138,7 +150,7 @@
     takePhotoButton.layer.borderWidth = 5;
     takePhotoButton.backgroundColor = [UIColor colorWithRed:0 green:204/255.0 blue:1 alpha:1];
     [takePhotoButton bk_whenTapped:^{
-        NSLog(@"1");
+        [self takePhoto];
     }];
     UILongPressGestureRecognizer *lpgr = [UILongPressGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
         
@@ -146,8 +158,8 @@
         
         if (state == UIGestureRecognizerStateBegan) {
             NSLog(@"开始");
-            timer = [NSTimer bk_scheduledTimerWithTimeInterval:0.2 block:^(NSTimer *timer) {
-                NSLog(@"2");
+            timer = [NSTimer bk_scheduledTimerWithTimeInterval:0.1 block:^(NSTimer *timer) {
+                [self takePhoto];
             } repeats:YES];
         }
         if (state == UIGestureRecognizerStateEnded) {
@@ -163,7 +175,16 @@
 
 }
 
-#pragma mark 不可旋转
+#pragma mark - Private
+- (void) takePhoto{
+    [self performSelector:@selector(cameraViewStartRecording)];
+}
+
+-(void) updateDotView{
+    self.dotView.index = self.images.count;
+}
+
+#pragma mark - 不可旋转
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
@@ -177,7 +198,17 @@
 
 #pragma mark - DBCameraViewControllerDelegate
 - (void) camera:(id)cameraViewController didFinishWithImage:(UIImage *)image withMetadata:(NSDictionary *)metadata{
+//    [self bk_performBlockInBackground:^(id obj) {
+//        // 压缩
+//        UIImage* imageTemp = [image scaleToFitSize:CGSizeMake(1024, 1024)];
+//        [self bk_performBlock:^(id obj) {
+//            [self.images addObject:imageTemp];
+//            [self updateDotView];
+//        } afterDelay:0];
+//    } afterDelay:0];
+    
     [self.images addObject:image];
+    [self updateDotView];
 }
 - (void) dismissCamera:(id)cameraViewController{
     if ([self.delegate_td respondsToSelector:@selector(dismissCamera:)]){
