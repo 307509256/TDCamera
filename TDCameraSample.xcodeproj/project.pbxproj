@@ -19,6 +19,7 @@
 		A02662551A132A91000F97A9 /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = A02662441A132A91000F97A9 /* UIView+Screenshot.m */; };
 		A02662561A132A91000F97A9 /* NYXProgressiveImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A02662471A132A91000F97A9 /* NYXProgressiveImageView.m */; };
 		A02662571A132A91000F97A9 /* NYXImagesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A026624A1A132A91000F97A9 /* NYXImagesHelper.m */; };
+		A026625E1A134639000F97A9 /* TDLookView.m in Sources */ = {isa = PBXBuildFile; fileRef = A026625D1A134639000F97A9 /* TDLookView.m */; };
 		A02E4AC11A0B740500D4E4D8 /* TDCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A02E4AC01A0B740500D4E4D8 /* TDCameraViewController.m */; };
 		A02E4AC41A0B74D500D4E4D8 /* TDCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = A02E4AC31A0B74D500D4E4D8 /* TDCameraView.m */; };
 		A03E493B1A10A6C80064923C /* BlocksKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03E48EC1A10A6C80064923C /* BlocksKit-Info.plist */; };
@@ -305,6 +306,8 @@
 		A02662491A132A91000F97A9 /* NYXImagesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYXImagesHelper.h; sourceTree = "<group>"; };
 		A026624A1A132A91000F97A9 /* NYXImagesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYXImagesHelper.m; sourceTree = "<group>"; };
 		A026624B1A132A91000F97A9 /* NYXImagesKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYXImagesKit.h; sourceTree = "<group>"; };
+		A026625C1A134639000F97A9 /* TDLookView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLookView.h; sourceTree = "<group>"; };
+		A026625D1A134639000F97A9 /* TDLookView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLookView.m; sourceTree = "<group>"; };
 		A02E4ABF1A0B740500D4E4D8 /* TDCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCameraViewController.h; sourceTree = "<group>"; };
 		A02E4AC01A0B740500D4E4D8 /* TDCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDCameraViewController.m; sourceTree = "<group>"; };
 		A02E4AC21A0B74D500D4E4D8 /* TDCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCameraView.h; sourceTree = "<group>"; };
@@ -1086,6 +1089,8 @@
 				A06797EE1A120564008AC9D8 /* TDDotView.m */,
 				A02E4AC21A0B74D500D4E4D8 /* TDCameraView.h */,
 				A02E4AC31A0B74D500D4E4D8 /* TDCameraView.m */,
+				A026625C1A134639000F97A9 /* TDLookView.h */,
+				A026625D1A134639000F97A9 /* TDLookView.m */,
 				A026622F1A132A91000F97A9 /* NYXImagesKit */,
 				A099C76B1A0B6B6800313401 /* DBCamera */,
 				A099C9DC1A0B6CFA00313401 /* GPUImage */,
@@ -1747,6 +1752,7 @@
 				A099CB441A0B6CFB00313401 /* GPUImageCrosshairGenerator.m in Sources */,
 				A099CB971A0B6CFB00313401 /* GPUImageRawDataInput.m in Sources */,
 				A099CB451A0B6CFB00313401 /* GPUImageCrosshatchFilter.m in Sources */,
+				A026625E1A134639000F97A9 /* TDLookView.m in Sources */,
 				A099CB381A0B6CFB00313401 /* GPUImageCGAColorspaceFilter.m in Sources */,
 				A099CB341A0B6CFB00313401 /* GPUImageBrightnessFilter.m in Sources */,
 				A099C6E61A0B67EE00313401 /* ViewController.m in Sources */,
