@@ -268,6 +268,7 @@
 		A0B719F11A1091E200E0C47C /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E41A1091E200E0C47C /* NSArray+MASAdditions.m */; };
 		A0B719F21A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E71A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		A0B719F31A1091E200E0C47C /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E91A1091E200E0C47C /* View+MASAdditions.m */; };
+		A0BE6C6F1A14857100E4EC85 /* TDMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BE6C6E1A14857100E4EC85 /* TDMotionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -813,6 +814,8 @@
 		A0B719E81A1091E200E0C47C /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
 		A0B719E91A1091E200E0C47C /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
 		A0B719EA1A1091E200E0C47C /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		A0BE6C6D1A14857100E4EC85 /* TDMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMotionManager.h; sourceTree = "<group>"; };
+		A0BE6C6E1A14857100E4EC85 /* TDMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMotionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1091,6 +1094,8 @@
 				A02E4AC31A0B74D500D4E4D8 /* TDCameraView.m */,
 				A026625C1A134639000F97A9 /* TDLookView.h */,
 				A026625D1A134639000F97A9 /* TDLookView.m */,
+				A0BE6C6D1A14857100E4EC85 /* TDMotionManager.h */,
+				A0BE6C6E1A14857100E4EC85 /* TDMotionManager.m */,
 				A026622F1A132A91000F97A9 /* NYXImagesKit */,
 				A099C76B1A0B6B6800313401 /* DBCamera */,
 				A099C9DC1A0B6CFA00313401 /* GPUImage */,
@@ -1832,6 +1837,7 @@
 				A099C7CA1A0B6B6800313401 /* DBCameraGridView.m in Sources */,
 				A099CB961A0B6CFB00313401 /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
 				A099CBC41A0B6CFB00313401 /* GPUImageWeakPixelInclusionFilter.m in Sources */,
+				A0BE6C6F1A14857100E4EC85 /* TDMotionManager.m in Sources */,
 				A099CBB81A0B6CFB00313401 /* GPUImageToneCurveFilter.m in Sources */,
 				A099CB481A0B6CFB00313401 /* GPUImageDilationFilter.m in Sources */,
 				A099CB691A0B6CFB00313401 /* GPUImageHueBlendFilter.m in Sources */,

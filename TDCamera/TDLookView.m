@@ -13,8 +13,10 @@
 
 @interface TDLookView ()
 @property (nonatomic) NSArray* images;
-@property (nonatomic, strong) CMMotionManager *motionManager;
+@property (nonatomic) NSMutableArray* imageViews;
+@property (nonatomic) CMMotionManager *motionManager;
 @property (nonatomic) NSInteger index;
+@property (nonatomic) double roll;
 @end
 
 @implementation TDLookView
@@ -22,9 +24,11 @@
     self = [super init];
     if (self) {
         self.images = images;
+        self.imageViews = [[NSMutableArray alloc] initWithCapacity:self.images.count];
         [self.images bk_all:^BOOL(id obj) {
             UIImageView* imageView = [[UIImageView alloc] initWithImage:obj];
             [self addSubview:imageView];
+            [self.imageViews addObject:imageView];
             [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(@0);
                 make.left.equalTo(@0);
@@ -34,6 +38,7 @@
             return YES;
         }];
         self.index = 0;
+        [self bringSubviewToFront:self.imageViews[self.index]];
         [self startMonitoring];
     }
     return self;
@@ -43,46 +48,37 @@
     [self stopMonitoring];
 }
 
-static NSTimeInterval td_time_last;
-#define TD_TIME_INTERVAL 0.5f
--(void)updateUI:(BOOL)up{
-    NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
-    if (td_time_last == 0) {
-        td_time_last = now;
-        up?self.index++:self.index--;
-        [self bringSubviewToFront:[self subviews][self.index]];
-    }else{
-        if (now - td_time_last > TD_TIME_INTERVAL) {
-            td_time_last = now;
-            up?self.index++:self.index--;
-            [self bringSubviewToFront:[self subviews][self.index]];
-        }
-    }
-    
-}
-
 
 #pragma mark - Core Motion
+
+#define TD_ROLL_INTERVAL 0.014
 
 - (void)startMonitoring
 {
     if (!_motionManager) {
-        _motionManager = [[CMMotionManager alloc] init];
-        _motionManager.gyroUpdateInterval = 0.01;
+//        _motionManager = [[CMMotionManager alloc] init];
     }
-    
-    if (![_motionManager isGyroActive] && [_motionManager isGyroAvailable] ) {
-        [_motionManager startGyroUpdatesToQueue:[NSOperationQueue currentQueue]
-                                    withHandler:^(CMGyroData *gyroData, NSError *error) {
-                                        CGFloat rotationRate = gyroData.rotationRate.y;
-                                        if (fabs(rotationRate) >= 0.1) {
-                                            if (rotationRate > 0 && self.index + 1< self.images.count) {
-                                                [self updateUI:YES];
-                                            }else if(rotationRate < 0 && self.index > 0){
-                                                [self updateUI:NO];
-                                            }
-                                        }
-                                    }];
+    if (![_motionManager isDeviceMotionActive] && [_motionManager isDeviceMotionAvailable] ) {
+        [_motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMDeviceMotion *motion, NSError *error) {
+            double roll = motion.attitude.roll;
+            if (fabs(roll - self.roll) >= TD_ROLL_INTERVAL) {
+                if (self.roll < roll) {
+                    if (self.index + 1< self.images.count) {
+                        self.index++;
+                        [self bringSubviewToFront:self.imageViews[self.index]];
+                        NSLog(@"%ld",self.index);
+                    }
+                    self.roll += TD_ROLL_INTERVAL;
+                }else if(self.roll >= roll){
+                    if (self.index > 0) {
+                        self.index--;
+                        [self bringSubviewToFront:self.imageViews[self.index]];
+                        NSLog(@"%ld",self.index);
+                    }
+                    self.roll -= TD_ROLL_INTERVAL;
+                }
+            }
+        }];
     } else {
         NSLog(@"There is not available gyro.");
     }
@@ -90,7 +86,7 @@ static NSTimeInterval td_time_last;
 
 - (void)stopMonitoring
 {
-    [_motionManager stopGyroUpdates];
+    [_motionManager stopDeviceMotionUpdates];
 }
 
 @end

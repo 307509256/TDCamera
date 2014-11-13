@@ -177,6 +177,9 @@
 
 #pragma mark - Private
 - (void) takePhoto{
+    if (self.images.count == TD_IMAGE_COUNT) {
+        return;
+    }
     [self performSelector:@selector(cameraViewStartRecording)];
 }
 
