@@ -152,24 +152,25 @@
     [takePhotoButton bk_whenTapped:^{
         [self takePhoto];
     }];
-    UILongPressGestureRecognizer *lpgr = [UILongPressGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
-        
-        static NSTimer* timer = nil;
-        
-        if (state == UIGestureRecognizerStateBegan) {
-            timer = [NSTimer bk_scheduledTimerWithTimeInterval:0.1 block:^(NSTimer *timer) {
-                [self takePhoto];
-            } repeats:YES];
-        }
-        if (state == UIGestureRecognizerStateEnded) {
-            if (timer) {
-                [timer invalidate];
-                timer = nil;
-            }
-        }
-        
-    }];
-    [takePhotoButton addGestureRecognizer:lpgr];
+    
+//    UILongPressGestureRecognizer *lpgr = [UILongPressGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
+//        
+//        static NSTimer* timer = nil;
+//        
+//        if (state == UIGestureRecognizerStateBegan) {
+//            timer = [NSTimer bk_scheduledTimerWithTimeInterval:0.1 block:^(NSTimer *timer) {
+//                [self takePhoto];
+//            } repeats:YES];
+//        }
+//        if (state == UIGestureRecognizerStateEnded) {
+//            if (timer) {
+//                [timer invalidate];
+//                timer = nil;
+//            }
+//        }
+//        
+//    }];
+//    [takePhotoButton addGestureRecognizer:lpgr];
 
 }
 
