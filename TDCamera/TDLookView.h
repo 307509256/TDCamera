@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDMotionManager.h"
 
-@interface TDLookView : UIView
+@interface TDLookView : UIView<TDMotionManagerDelegate>
 -(instancetype)initWithImages:(NSArray*)images;
 @end

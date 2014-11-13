@@ -8,8 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol TDMotionManagerDelegate <NSObject>
+
+@optional
+-(void) tdLeftOverturnWithMotionManager:(id) manager;
+-(void) tdRightOverturnWithMotionManager:(id) manager;
+@end
+
 @interface TDMotionManager : NSObject
 
 + (instancetype)sharedInstance;
+
+-(void) observeDeviceMotionUpdatesWithObj:(id<TDMotionManagerDelegate>) obj;
+
+-(void) unObserveDeviceMotionUpdatesWithObj:(id<TDMotionManagerDelegate>) obj;
 
 @end

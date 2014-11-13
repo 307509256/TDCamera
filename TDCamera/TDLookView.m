@@ -9,14 +9,14 @@
 #import "TDLookView.h"
 #import "BlocksKit.h"
 #import "Masonry.h"
-@import CoreMotion;
+
 
 @interface TDLookView ()
 @property (nonatomic) NSArray* images;
 @property (nonatomic) NSMutableArray* imageViews;
-@property (nonatomic) CMMotionManager *motionManager;
+
 @property (nonatomic) NSInteger index;
-@property (nonatomic) double roll;
+
 @end
 
 @implementation TDLookView
@@ -39,54 +39,26 @@
         }];
         self.index = 0;
         [self bringSubviewToFront:self.imageViews[self.index]];
-        [self startMonitoring];
+        [[TDMotionManager sharedInstance] observeDeviceMotionUpdatesWithObj:self];
     }
     return self;
 }
 -(void)dealloc{
-#warning 检测是否调用此方法
-    [self stopMonitoring];
+    [[TDMotionManager sharedInstance] unObserveDeviceMotionUpdatesWithObj:self];
 }
 
 
-#pragma mark - Core Motion
-
-#define TD_ROLL_INTERVAL 0.014
-
-- (void)startMonitoring
-{
-    if (!_motionManager) {
-//        _motionManager = [[CMMotionManager alloc] init];
-    }
-    if (![_motionManager isDeviceMotionActive] && [_motionManager isDeviceMotionAvailable] ) {
-        [_motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMDeviceMotion *motion, NSError *error) {
-            double roll = motion.attitude.roll;
-            if (fabs(roll - self.roll) >= TD_ROLL_INTERVAL) {
-                if (self.roll < roll) {
-                    if (self.index + 1< self.images.count) {
-                        self.index++;
-                        [self bringSubviewToFront:self.imageViews[self.index]];
-                        NSLog(@"%ld",self.index);
-                    }
-                    self.roll += TD_ROLL_INTERVAL;
-                }else if(self.roll >= roll){
-                    if (self.index > 0) {
-                        self.index--;
-                        [self bringSubviewToFront:self.imageViews[self.index]];
-                        NSLog(@"%ld",self.index);
-                    }
-                    self.roll -= TD_ROLL_INTERVAL;
-                }
-            }
-        }];
-    } else {
-        NSLog(@"There is not available gyro.");
+-(void) tdLeftOverturnWithMotionManager:(id) manager{
+    if (self.index > 0) {
+        self.index--;
+        [self bringSubviewToFront:self.imageViews[self.index]];
     }
 }
-
-- (void)stopMonitoring
-{
-    [_motionManager stopDeviceMotionUpdates];
+-(void) tdRightOverturnWithMotionManager:(id) manager{
+    if (self.index + 1< self.images.count) {
+        self.index++;
+        [self bringSubviewToFront:self.imageViews[self.index]];
+    }
 }
 
 @end

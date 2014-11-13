@@ -157,13 +157,11 @@
         static NSTimer* timer = nil;
         
         if (state == UIGestureRecognizerStateBegan) {
-            NSLog(@"开始");
             timer = [NSTimer bk_scheduledTimerWithTimeInterval:0.1 block:^(NSTimer *timer) {
                 [self takePhoto];
             } repeats:YES];
         }
         if (state == UIGestureRecognizerStateEnded) {
-            NSLog(@"结束");
             if (timer) {
                 [timer invalidate];
                 timer = nil;
