@@ -38,10 +38,10 @@
     TDLookView* lookview = [[TDLookView alloc] initWithImages:images];
     [next.view addSubview:lookview];
     [lookview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(next.view.mas_centerX);
-        make.centerY.equalTo(next.view.mas_centerY);
-        make.width.equalTo(next.view.mas_width).multipliedBy(0.3);
-        make.height.equalTo(next.view.mas_height).multipliedBy(0.3);
+        make.top.equalTo(@84);
+        make.left.equalTo(@20);
+        make.right.equalTo(@-20);
+        make.bottom.equalTo(@-20);
     }];
     [self.navigationController pushViewController:next animated:YES];
 }
