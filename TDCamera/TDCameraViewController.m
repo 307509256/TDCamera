@@ -44,6 +44,9 @@
     self.view.frame = [[UIScreen mainScreen] bounds];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    // block weak
+    __weak TDCameraViewController *wself = self;
+    
     // 上部导航栏
     UIView* topBar = [[UIView alloc] init];
     [self.view addSubview:topBar];
@@ -59,7 +62,12 @@
     [topBar addSubview:cancelButton];
     [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
     [cancelButton bk_whenTapped:^{
-        [self dismissCamera:self];
+        TDCameraViewController *sself = wself;
+        if (sself) {
+            [sself dismissCamera:sself];
+        }else{
+            NSLog(@"<self> dealloc before we could run this code.");
+        }
     }];
     [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(topBar.mas_centerY);
@@ -70,11 +78,16 @@
     [topBar addSubview:nextButton];
     [nextButton setTitle:@"下一步" forState:UIControlStateNormal];
     [nextButton bk_whenTapped:^{
-        if (self.images.count == 0) {
-            return;
+        TDCameraViewController *sself = wself;
+        if (sself) {
+            if (sself.images.count == 0) {
+                return;
+            }
+            if ([sself.delegate_td respondsToSelector:@selector(camera:didFinishWithImageArray:withMetadata:)] )
+                [sself.delegate_td camera:sself didFinishWithImageArray:sself.images withMetadata:nil];
+        }else{
+            NSLog(@"<self> dealloc before we could run this code.");
         }
-        if ([self.delegate_td respondsToSelector:@selector(camera:didFinishWithImageArray:withMetadata:)] )
-            [self.delegate_td camera:self didFinishWithImageArray:self.images withMetadata:nil];
     }];
     [nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(topBar.mas_centerY);
@@ -95,7 +108,12 @@
     [bottomBar addSubview:settingButton];
     [settingButton setTitle:@"设置" forState:UIControlStateNormal];
     [settingButton bk_whenTapped:^{
-        
+        TDCameraViewController *sself = wself;
+        if (sself) {
+            
+        }else{
+            NSLog(@"<self> dealloc before we could run this code.");
+        }
     }];
     [settingButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(bottomBar.mas_centerY);
@@ -106,11 +124,16 @@
     [bottomBar addSubview:backButton];
     [backButton setTitle:@"撤销" forState:UIControlStateNormal];
     [backButton bk_whenTapped:^{
-        if (self.images.count == 0) {
-            return;
+        TDCameraViewController *sself = wself;
+        if (sself) {
+            if (sself.images.count == 0) {
+                return;
+            }
+            [sself.images removeLastObject];
+            [sself updateDotView];
+        }else{
+            NSLog(@"<self> dealloc before we could run this code.");
         }
-        [self.images removeLastObject];
-        [self updateDotView];
     }];
     [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(bottomBar.mas_centerY);
@@ -150,7 +173,12 @@
     takePhotoButton.layer.borderWidth = 5;
     takePhotoButton.backgroundColor = [UIColor colorWithRed:0 green:204/255.0 blue:1 alpha:1];
     [takePhotoButton bk_whenTapped:^{
-        [self takePhoto];
+        TDCameraViewController *sself = wself;
+        if (sself) {
+            [sself takePhoto];
+        }else{
+            NSLog(@"<self> dealloc before we could run this code.");
+        }
     }];
     
 //    UILongPressGestureRecognizer *lpgr = [UILongPressGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
