@@ -23,6 +23,11 @@
 @property (nonatomic) NSMutableArray* images;
 
 @property (weak,nonatomic) TDDotView* dotView;
+
+// 状态
+@property BOOL statusBarHidden;
+@property BOOL idleTimerDisabled;
+
 @end
 
 @implementation TDCameraViewController
@@ -200,6 +205,19 @@
 //    }];
 //    [takePhotoButton addGestureRecognizer:lpgr];
 
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [[UIApplication sharedApplication] setStatusBarHidden:self.statusBarHidden];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:self.idleTimerDisabled];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
+    self.idleTimerDisabled = [UIApplication sharedApplication].idleTimerDisabled;
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 }
 
 #pragma mark - Private
