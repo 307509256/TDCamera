@@ -27,13 +27,12 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)takePhoto:(UIButton *)sender {
-    [self presentViewController:[[TDCameraViewController alloc]initWithDelegate:self] animated:YES completion:nil];
+    [self.navigationController pushViewController:[[TDCameraViewController alloc]initWithDelegate:self] animated:YES];
 }
 
 #pragma mark - TDCameraViewControllerDelegate
 
 - (void) camera:(id)cameraViewController didFinishWithImageArray:(NSArray *)images withMetadata:(NSDictionary *)metadata{
-    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
     UIViewController* next = [[UIViewController alloc] init];
     TDLookView* lookview = [[TDLookView alloc] initWithImages:images];
     [next.view addSubview:lookview];
@@ -43,10 +42,19 @@
         make.right.equalTo(@-20);
         make.bottom.equalTo(@-20);
     }];
-    [self.navigationController pushViewController:next animated:YES];
+    
+    
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionReveal; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    transition.subtype = kCATransitionFromBottom; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    
+    [self.navigationController pushViewController:next animated:NO];
 }
 - (void) dismissCamera:(id)cameraViewController{
-    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

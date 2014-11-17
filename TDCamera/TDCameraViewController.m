@@ -27,6 +27,7 @@
 // 状态
 @property BOOL statusBarHidden;
 @property BOOL idleTimerDisabled;
+@property BOOL navigationBarHidden;
 
 @end
 
@@ -207,17 +208,26 @@
 
 }
 
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:self.statusBarHidden];
     [[UIApplication sharedApplication] setIdleTimerDisabled:self.idleTimerDisabled];
+    if (self.navigationController) {
+        [self.navigationController setNavigationBarHidden:self.navigationBarHidden];
+    }
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     self.statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
     self.idleTimerDisabled = [UIApplication sharedApplication].idleTimerDisabled;
+    if (self.navigationController) {
+        self.navigationBarHidden = self.navigationController.navigationBarHidden;
+    }
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    if (self.navigationController) {
+        [self.navigationController setNavigationBarHidden:YES];
+    }
 }
 
 #pragma mark - Private
