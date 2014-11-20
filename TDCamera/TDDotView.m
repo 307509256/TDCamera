@@ -23,7 +23,7 @@
 }
 
 // 点的直径
-#define TD_DOT_DIA 7.f
+#define TD_DOT_DIA 4.f
 
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
@@ -34,7 +34,7 @@
     for (int i = 0; i < self.count; i++) {
 
         if (i == self.index) {
-            CGContextSetFillColor(ctx, CGColorGetComponents([[UIColor colorWithRed:190/255.0 green:190/255.0 blue:190/255.0 alpha:1] CGColor]));
+            CGContextSetFillColor(ctx, CGColorGetComponents([[UIColor colorWithRed:1 green:1 blue:1 alpha:1] CGColor]));
         }
         
         CGRect docFrame = CGRectMake(rect.size.width/self.count*i + rect.size.width/self.count/2 - TD_DOT_DIA/2, rect.size.height/2 - TD_DOT_DIA/2, TD_DOT_DIA, TD_DOT_DIA);

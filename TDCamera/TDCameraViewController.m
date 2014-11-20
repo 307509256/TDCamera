@@ -66,7 +66,7 @@
     // 取消按钮
     UIButton* cancelButton = [[UIButton alloc] init];
     [topBar addSubview:cancelButton];
-    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+    [cancelButton setImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
     [cancelButton bk_whenTapped:^{
         TDCameraViewController *sself = wself;
         if (sself) {
@@ -77,7 +77,7 @@
     }];
     [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(topBar.mas_centerY);
-        make.left.equalTo(@0);
+        make.left.equalTo(@14);
     }];
     // 下一步按钮
     UIButton* nextButton = [[UIButton alloc] init];
@@ -97,7 +97,7 @@
     }];
     [nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(topBar.mas_centerY);
-        make.right.equalTo(@0);
+        make.right.equalTo(@-14);
     }];
     // 下部设置,显示图片数量,撤销 栏
     UIView* bottomBar = [[UIView alloc] init];
@@ -112,7 +112,8 @@
     // 设置按钮
     UIButton* settingButton = [[UIButton alloc] init];
     [bottomBar addSubview:settingButton];
-    [settingButton setTitle:@"设置" forState:UIControlStateNormal];
+    UIImage* settingImage = [UIImage imageNamed:@"setting"];
+    [settingButton setImage:settingImage forState:UIControlStateNormal];
     [settingButton bk_whenTapped:^{
         TDCameraViewController *sself = wself;
         if (sself) {
@@ -123,12 +124,15 @@
     }];
     [settingButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(bottomBar.mas_centerY);
-        make.left.equalTo(@0);
+        make.left.equalTo(@20);
+        make.width.equalTo(@(settingImage.size.width));
+        make.height.equalTo(@(settingImage.size.height));
     }];
     // 撤销按钮
     UIButton* backButton = [[UIButton alloc] init];
     [bottomBar addSubview:backButton];
-    [backButton setTitle:@"撤销" forState:UIControlStateNormal];
+    UIImage* backImage = [UIImage imageNamed:@"back"];
+    [backButton setImage:backImage forState:UIControlStateNormal];
     [backButton bk_whenTapped:^{
         TDCameraViewController *sself = wself;
         if (sself) {
@@ -143,7 +147,9 @@
     }];
     [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(bottomBar.mas_centerY);
-        make.right.equalTo(@0);
+        make.right.equalTo(@-20);
+        make.width.equalTo(@(backImage.size.width));
+        make.height.equalTo(@(backImage.size.height));
     }];
     // 拍摄进度条
     TDDotView* dotContentView = [[TDDotView alloc] initWithDotCount:TD_IMAGE_COUNT];
@@ -174,10 +180,12 @@
         make.height.equalTo(@100);
         make.width.equalTo(takePhotoButton.mas_height);
     }];
-    takePhotoButton.layer.cornerRadius = 50;
-    takePhotoButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    takePhotoButton.layer.borderWidth = 5;
-    takePhotoButton.backgroundColor = [UIColor colorWithRed:0 green:204/255.0 blue:1 alpha:1];
+//    takePhotoButton.layer.cornerRadius = 50;
+//    takePhotoButton.layer.borderColor = [UIColor whiteColor].CGColor;
+//    takePhotoButton.layer.borderWidth = 5;
+//    takePhotoButton.backgroundColor = [UIColor colorWithRed:0 green:204/255.0 blue:1 alpha:1];
+    [takePhotoButton setImage:[UIImage imageNamed:@"camera_normal"] forState:UIControlStateNormal];
+    [takePhotoButton setImage:[UIImage imageNamed:@"camera_down"] forState:UIControlStateHighlighted];
     [takePhotoButton bk_whenTapped:^{
         TDCameraViewController *sself = wself;
         if (sself) {
