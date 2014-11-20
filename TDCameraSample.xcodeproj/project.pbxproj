@@ -62,9 +62,7 @@
 		A099C6E01A0B67EE00313401 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C6DF1A0B67EE00313401 /* main.m */; };
 		A099C6E31A0B67EE00313401 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C6E21A0B67EE00313401 /* AppDelegate.m */; };
 		A099C6E61A0B67EE00313401 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C6E51A0B67EE00313401 /* ViewController.m */; };
-		A099C6E91A0B67EE00313401 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A099C6E71A0B67EE00313401 /* Main.storyboard */; };
 		A099C6EB1A0B67EE00313401 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A099C6EA1A0B67EE00313401 /* Images.xcassets */; };
-		A099C6EE1A0B67EE00313401 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A099C6EC1A0B67EE00313401 /* LaunchScreen.xib */; };
 		A099C6FA1A0B67EE00313401 /* TDCameraSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C6F91A0B67EE00313401 /* TDCameraSampleTests.m */; };
 		A099C7B01A0B6B6800313401 /* UIImage+Asset.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C76F1A0B6B6800313401 /* UIImage+Asset.m */; };
 		A099C7B11A0B6B6800313401 /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C7711A0B6B6800313401 /* UIImage+Crop.m */; };
@@ -268,6 +266,7 @@
 		A0B719F11A1091E200E0C47C /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E41A1091E200E0C47C /* NSArray+MASAdditions.m */; };
 		A0B719F21A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E71A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		A0B719F31A1091E200E0C47C /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E91A1091E200E0C47C /* View+MASAdditions.m */; };
+		A0B8AD521A1DC9980045EFAD /* icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B8AD511A1DC9980045EFAD /* icon.xcassets */; };
 		A0BE6C6F1A14857100E4EC85 /* TDMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BE6C6E1A14857100E4EC85 /* TDMotionManager.m */; };
 /* End PBXBuildFile section */
 
@@ -814,6 +813,7 @@
 		A0B719E81A1091E200E0C47C /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
 		A0B719E91A1091E200E0C47C /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
 		A0B719EA1A1091E200E0C47C /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		A0B8AD511A1DC9980045EFAD /* icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icon.xcassets; sourceTree = "<group>"; };
 		A0BE6C6D1A14857100E4EC85 /* TDMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMotionManager.h; sourceTree = "<group>"; };
 		A0BE6C6E1A14857100E4EC85 /* TDMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMotionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1096,6 +1096,7 @@
 				A026625D1A134639000F97A9 /* TDLookView.m */,
 				A0BE6C6D1A14857100E4EC85 /* TDMotionManager.h */,
 				A0BE6C6E1A14857100E4EC85 /* TDMotionManager.m */,
+				A0B8AD511A1DC9980045EFAD /* icon.xcassets */,
 				A026622F1A132A91000F97A9 /* NYXImagesKit */,
 				A099C76B1A0B6B6800313401 /* DBCamera */,
 				A099C9DC1A0B6CFA00313401 /* GPUImage */,
@@ -1706,14 +1707,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A099C7BA1A0B6B6800313401 /* 1977.acv in Resources */,
-				A099C6E91A0B67EE00313401 /* Main.storyboard in Resources */,
 				A099C7C71A0B6B6800313401 /* DBCameraImages.xcassets in Resources */,
-				A099C6EE1A0B67EE00313401 /* LaunchScreen.xib in Resources */,
 				A099C7C01A0B6B6800313401 /* DBCamera.strings in Resources */,
 				A03E493B1A10A6C80064923C /* BlocksKit-Info.plist in Resources */,
 				A099C7BE1A0B6B6800313401 /* Nashville.acv in Resources */,
 				A099C6EB1A0B67EE00313401 /* Images.xcassets in Resources */,
 				A099C7BB1A0B6B6800313401 /* amaro.acv in Resources */,
+				A0B8AD521A1DC9980045EFAD /* icon.xcassets in Resources */,
 				A099C7BD1A0B6B6800313401 /* mayfair.acv in Resources */,
 				A099C7BC1A0B6B6800313401 /* Hudson.acv in Resources */,
 				A099C7BF1A0B6B6800313401 /* Valencia.acv in Resources */,
@@ -2070,7 +2070,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2105,7 +2105,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
