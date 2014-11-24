@@ -52,7 +52,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     // 设置manager
-    self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPresetMedium;
+    self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPreset640x480;
     
     // block weak
     __weak TDCameraViewController *wself = self;
