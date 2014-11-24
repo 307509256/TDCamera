@@ -12,6 +12,7 @@
 #import "BlocksKit+UIKit.h"
 #import "TDDotView.h"
 //#import "NYXImagesKit.h"
+#import "DBCameraManager.h"
 
 // 相机视图高度占屏幕的比率
 #define TD_CAMERA_VIEW_HEIGHT_MULTIPLY 0.7
@@ -49,6 +50,9 @@
     [super viewDidLoad];
     self.view.frame = [[UIScreen mainScreen] bounds];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    // 设置manager
+    self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPresetMedium;
     
     // block weak
     __weak TDCameraViewController *wself = self;
