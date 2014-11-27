@@ -84,6 +84,8 @@
     [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(topBar.mas_centerY);
         make.left.equalTo(@14);
+        make.width.equalTo(@30);
+        make.height.equalTo(@30);
     }];
     // 下一步按钮
     UIButton* nextButton = [[UIButton alloc] init];
@@ -139,8 +141,8 @@
     [settingButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(bottomBar.mas_centerY);
         make.left.equalTo(@20);
-        make.width.equalTo(@(settingImage.size.width));
-        make.height.equalTo(@(settingImage.size.height));
+        make.width.equalTo(@30);
+        make.height.equalTo(@30);
     }];
     // 撤销按钮
     UIButton* backButton = [[UIButton alloc] init];
@@ -162,8 +164,8 @@
     [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(bottomBar.mas_centerY);
         make.right.equalTo(@-20);
-        make.width.equalTo(@(backImage.size.width));
-        make.height.equalTo(@(backImage.size.height));
+        make.width.equalTo(@30);
+        make.height.equalTo(@30);
     }];
     // 拍摄进度条
     TDDotView* dotContentView = [[TDDotView alloc] initWithDotCount:TD_IMAGE_COUNT];
@@ -191,7 +193,7 @@
     [takePhotoView addSubview:takePhotoButton];
     [takePhotoButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(@0);
-        make.height.equalTo(@100);
+        make.height.equalTo(@110);
         make.width.equalTo(takePhotoButton.mas_height);
     }];
 //    takePhotoButton.layer.cornerRadius = 50;
