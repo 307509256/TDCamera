@@ -27,6 +27,7 @@
         self.imageViews = [[NSMutableArray alloc] initWithCapacity:self.images.count];
         [self.images bk_all:^BOOL(id obj) {
             UIImageView* imageView = [[UIImageView alloc] initWithImage:obj];
+            imageView.contentMode = UIViewContentModeScaleAspectFit;
             [self addSubview:imageView];
             [self.imageViews addObject:imageView];
             [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
