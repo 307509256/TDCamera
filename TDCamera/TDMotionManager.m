@@ -63,7 +63,7 @@
 
 #pragma mark - Core Motion
 
-#define TD_ROLL_INTERVAL 0.01
+#define TD_ROLL_INTERVAL 0.03
 
 - (void)startMonitoring
 {
