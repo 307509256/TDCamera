@@ -13,13 +13,15 @@
 #import "TDDotView.h"
 //#import "NYXImagesKit.h"
 #import "DBCameraManager.h"
+#import "CMPopTipView.h"
+#import "TDPopView.h"
 
 // 相机视图高度占屏幕的比率
 #define TD_CAMERA_VIEW_HEIGHT_MULTIPLY 0.7
 // 最多拍摄照片数量
 #define TD_IMAGE_COUNT 24
 
-@interface TDCameraViewController ()<DBCameraViewControllerDelegate>
+@interface TDCameraViewController ()<DBCameraViewControllerDelegate,TDPopViewDelegate>
 @property (weak,nonatomic) id<TDCameraViewControllerDelegate> delegate_td;
 @property (nonatomic) NSMutableArray* images;
 
@@ -121,7 +123,15 @@
     [settingButton bk_whenTapped:^{
         TDCameraViewController *sself = wself;
         if (sself) {
-            
+//            TDPopView* popContent = [[TDPopView alloc] initWithDelegate:self];
+//            CMPopTipView* popTipView = [[CMPopTipView alloc] initWithCustomView:popContent];
+//            popTipView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
+//            popTipView.dismissTapAnywhere = YES;
+//            popTipView.has3DStyle = NO;
+//            popTipView.cornerRadius = 8.0;
+//            popTipView.sidePadding = 8.0f;
+//            popTipView.hasShadow = NO;
+//            [popTipView presentPointingAtView:settingButton inView:sself.view animated:YES];
         }else{
             NSLog(@"<self> dealloc before we could run this code.");
         }
@@ -285,6 +295,10 @@
         [self.delegate_td dismissCamera:self];
         [cameraViewController restoreFullScreenMode];
     }
+}
+#pragma mark - TDPopViewDelegate
+- (void) popView:(TDPopView*) popView ghost:(BOOL) isGhost{
+
 }
 
 @end

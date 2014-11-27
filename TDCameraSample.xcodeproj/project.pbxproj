@@ -267,6 +267,8 @@
 		A0B719F21A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E71A1091E200E0C47C /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		A0B719F31A1091E200E0C47C /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B719E91A1091E200E0C47C /* View+MASAdditions.m */; };
 		A0B8AD521A1DC9980045EFAD /* icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B8AD511A1DC9980045EFAD /* icon.xcassets */; };
+		A0BB69971A25CB380018F538 /* CMPopTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB69961A25CB380018F538 /* CMPopTipView.m */; };
+		A0BB699A1A25DC020018F538 /* TDPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB69991A25DC020018F538 /* TDPopView.m */; };
 		A0BE6C6F1A14857100E4EC85 /* TDMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BE6C6E1A14857100E4EC85 /* TDMotionManager.m */; };
 /* End PBXBuildFile section */
 
@@ -814,6 +816,10 @@
 		A0B719E91A1091E200E0C47C /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
 		A0B719EA1A1091E200E0C47C /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		A0B8AD511A1DC9980045EFAD /* icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icon.xcassets; sourceTree = "<group>"; };
+		A0BB69951A25CB380018F538 /* CMPopTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPopTipView.h; sourceTree = "<group>"; };
+		A0BB69961A25CB380018F538 /* CMPopTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPopTipView.m; sourceTree = "<group>"; };
+		A0BB69981A25DC020018F538 /* TDPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPopView.h; sourceTree = "<group>"; };
+		A0BB69991A25DC020018F538 /* TDPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPopView.m; sourceTree = "<group>"; };
 		A0BE6C6D1A14857100E4EC85 /* TDMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMotionManager.h; sourceTree = "<group>"; };
 		A0BE6C6E1A14857100E4EC85 /* TDMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMotionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1088,6 +1094,8 @@
 			children = (
 				A02E4ABF1A0B740500D4E4D8 /* TDCameraViewController.h */,
 				A02E4AC01A0B740500D4E4D8 /* TDCameraViewController.m */,
+				A0BB69981A25DC020018F538 /* TDPopView.h */,
+				A0BB69991A25DC020018F538 /* TDPopView.m */,
 				A06797ED1A120564008AC9D8 /* TDDotView.h */,
 				A06797EE1A120564008AC9D8 /* TDDotView.m */,
 				A02E4AC21A0B74D500D4E4D8 /* TDCameraView.h */,
@@ -1097,6 +1105,7 @@
 				A0BE6C6D1A14857100E4EC85 /* TDMotionManager.h */,
 				A0BE6C6E1A14857100E4EC85 /* TDMotionManager.m */,
 				A0B8AD511A1DC9980045EFAD /* icon.xcassets */,
+				A0BB69941A25CB380018F538 /* CMPopTipView */,
 				A026622F1A132A91000F97A9 /* NYXImagesKit */,
 				A099C76B1A0B6B6800313401 /* DBCamera */,
 				A099C9DC1A0B6CFA00313401 /* GPUImage */,
@@ -1622,6 +1631,15 @@
 			path = TDCamera/Masonry;
 			sourceTree = SOURCE_ROOT;
 		};
+		A0BB69941A25CB380018F538 /* CMPopTipView */ = {
+			isa = PBXGroup;
+			children = (
+				A0BB69951A25CB380018F538 /* CMPopTipView.h */,
+				A0BB69961A25CB380018F538 /* CMPopTipView.m */,
+			);
+			path = CMPopTipView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1738,6 +1756,7 @@
 				A03E49571A10A6C80064923C /* UIBarButtonItem+BlocksKit.m in Sources */,
 				A099CB4E1A0B6CFB00313401 /* GPUImageErosionFilter.m in Sources */,
 				A099C7B81A0B6B6800313401 /* DBCameraSegueViewController.m in Sources */,
+				A0BB69971A25CB380018F538 /* CMPopTipView.m in Sources */,
 				A03E495E1A10A6C80064923C /* UIWebView+BlocksKit.m in Sources */,
 				A03E495C1A10A6C80064923C /* UITextField+BlocksKit.m in Sources */,
 				A099CB8E1A0B6CFB00313401 /* GPUImagePerlinNoiseFilter.m in Sources */,
@@ -1957,6 +1976,7 @@
 				A099CB761A0B6CFB00313401 /* GPUImageLookupFilter.m in Sources */,
 				A099CB791A0B6CFB00313401 /* GPUImageLuminanceThresholdFilter.m in Sources */,
 				A099CB9C1A0B6CFB00313401 /* GPUImageRGBFilter.m in Sources */,
+				A0BB699A1A25DC020018F538 /* TDPopView.m in Sources */,
 				A099CB5D1A0B6CFB00313401 /* GPUImageGrayscaleFilter.m in Sources */,
 				A099CB531A0B6CFB00313401 /* GPUImageFilter.m in Sources */,
 				A099CB301A0B6CFB00313401 /* GPUImageAverageColor.m in Sources */,
