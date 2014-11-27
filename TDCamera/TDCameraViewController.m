@@ -125,6 +125,8 @@
     [settingButton bk_whenTapped:^{
         TDCameraViewController *sself = wself;
         if (sself) {
+            [UIAlertView bk_showAlertViewWithTitle:@"敬请期待" message:@"功能未完善,请等待下一个版本吧!" cancelButtonTitle:@"确定" otherButtonTitles:nil handler:nil];
+            
 //            TDPopView* popContent = [[TDPopView alloc] initWithDelegate:self];
 //            CMPopTipView* popTipView = [[CMPopTipView alloc] initWithCustomView:popContent];
 //            popTipView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
@@ -157,6 +159,7 @@
             }
             [sself.images removeLastObject];
             [sself updateDotView];
+            [sself updateGhost];
         }else{
             NSLog(@"<self> dealloc before we could run this code.");
         }
@@ -265,6 +268,31 @@
 -(void) updateDotView{
     self.dotView.index = self.images.count;
 }
+-(void) updateGhost{
+    // 清空幽灵
+    NSMutableArray* views = [@[] mutableCopy];
+    for (UIView* viewWith1Tag in [self.view subviews]) {
+        if (viewWith1Tag.tag == 1) {
+            [views addObject:viewWith1Tag];
+        }
+    }
+    for (UIView* view in views) {
+        [view removeFromSuperview];
+    }
+    
+    // 构建幽灵
+    if (self.images.count != 0) {
+        UIImage* image = self.images.lastObject;
+
+        UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.alpha = 0.3;
+        imageView.tag = 1;
+        CGSize size = [[UIScreen mainScreen] bounds].size;
+        imageView.frame = CGRectMake(0, 0, size.width, size.height*TD_CAMERA_VIEW_HEIGHT_MULTIPLY);
+        
+        [self.view addSubview:imageView];
+    }
+}
 
 #pragma mark - 不可旋转
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
@@ -291,6 +319,7 @@
     
     [self.images addObject:image];
     [self updateDotView];
+    [self updateGhost];
 }
 - (void) dismissCamera:(id)cameraViewController{
     if ([self.delegate_td respondsToSelector:@selector(dismissCamera:)]){
