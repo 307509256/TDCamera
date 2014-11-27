@@ -54,7 +54,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     // 设置manager
-    self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPreset640x480;
+    self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPresetMedium;
     
     // block weak
     __weak TDCameraViewController *wself = self;
@@ -289,6 +289,16 @@
         imageView.tag = 1;
         CGSize size = [[UIScreen mainScreen] bounds].size;
         imageView.frame = CGRectMake(0, 0, size.width, size.height*TD_CAMERA_VIEW_HEIGHT_MULTIPLY);
+        
+        // 方向
+//        UIDeviceOrientation o = [[self valueForKey:@"_deviceOrientation"] integerValue];
+//        CGFloat angle = 0;
+//        if ( o == UIDeviceOrientationLandscapeLeft ) angle = M_PI_2;
+//        else if ( o == UIDeviceOrientationLandscapeRight ) angle = -M_PI_2;
+//        else if ( o == UIDeviceOrientationPortraitUpsideDown ) angle = M_PI;
+//        imageView.transform = CGAffineTransformRotate(CGAffineTransformMakeTranslation(160.0f-imageView.center.x,240.0f-imageView.center.y),angle);
+//        imageView.contentMode = UIViewContentModeTop;
+        
         
         [self.view addSubview:imageView];
     }
