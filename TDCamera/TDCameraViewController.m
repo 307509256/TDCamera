@@ -55,7 +55,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     // 设置manager
-    self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPreset1920x1080;
+    self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPreset1280x720;
     
     // block weak
     __weak TDCameraViewController *wself = self;
@@ -276,6 +276,7 @@
     }
 }
 -(void) updateGhost{
+    return;
     // 清空幽灵
     NSMutableArray* views = [@[] mutableCopy];
     for (UIView* viewWith1Tag in [self.view subviews]) {
