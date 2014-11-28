@@ -26,6 +26,7 @@
 @property (nonatomic) NSMutableArray* images;
 
 @property (weak,nonatomic) TDDotView* dotView;
+@property (weak,nonatomic) UIButton* takePhotoButton;
 
 // 状态
 @property BOOL statusBarHidden;
@@ -54,7 +55,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     // 设置manager
-    self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPresetMedium;
+    self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPreset1920x1080;
     
     // block weak
     __weak TDCameraViewController *wself = self;
@@ -160,6 +161,7 @@
             [sself.images removeLastObject];
             [sself updateDotView];
             [sself updateGhost];
+            [sself updateTakePhotoButton];
         }else{
             NSLog(@"<self> dealloc before we could run this code.");
         }
@@ -193,18 +195,16 @@
     takePhotoView.backgroundColor = [UIColor colorWithRed:30/255.0 green:30/255.0 blue:30/255.0 alpha:1];
     // 拍照按钮
     UIButton* takePhotoButton = [[UIButton alloc] init];
+    self.takePhotoButton = takePhotoButton;
     [takePhotoView addSubview:takePhotoButton];
     [takePhotoButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(@0);
         make.height.equalTo(@110);
         make.width.equalTo(takePhotoButton.mas_height);
     }];
-//    takePhotoButton.layer.cornerRadius = 50;
-//    takePhotoButton.layer.borderColor = [UIColor whiteColor].CGColor;
-//    takePhotoButton.layer.borderWidth = 5;
-//    takePhotoButton.backgroundColor = [UIColor colorWithRed:0 green:204/255.0 blue:1 alpha:1];
     [takePhotoButton setImage:[UIImage imageNamed:@"camera_normal"] forState:UIControlStateNormal];
     [takePhotoButton setImage:[UIImage imageNamed:@"camera_down"] forState:UIControlStateHighlighted];
+    [takePhotoButton setImage:[UIImage imageNamed:@"camera_disable"] forState:UIControlStateDisabled];
     [takePhotoButton bk_whenTapped:^{
         TDCameraViewController *sself = wself;
         if (sself) {
@@ -268,6 +268,13 @@
 -(void) updateDotView{
     self.dotView.index = self.images.count;
 }
+-(void) updateTakePhotoButton{
+    if (self.images.count == TD_IMAGE_COUNT) {
+        [self.takePhotoButton setEnabled:NO];
+    }else{
+        [self.takePhotoButton setEnabled:YES];
+    }
+}
 -(void) updateGhost{
     // 清空幽灵
     NSMutableArray* views = [@[] mutableCopy];
@@ -318,18 +325,10 @@
 
 #pragma mark - DBCameraViewControllerDelegate
 - (void) camera:(id)cameraViewController didFinishWithImage:(UIImage *)image withMetadata:(NSDictionary *)metadata{
-//    [self bk_performBlockInBackground:^(id obj) {
-//        // 压缩
-//        UIImage* imageTemp = [image scaleToFitSize:CGSizeMake(1024, 1024)];
-//        [self bk_performBlock:^(id obj) {
-//            [self.images addObject:imageTemp];
-//            [self updateDotView];
-//        } afterDelay:0];
-//    } afterDelay:0];
-    
     [self.images addObject:image];
     [self updateDotView];
     [self updateGhost];
+    [self updateTakePhotoButton];
 }
 - (void) dismissCamera:(id)cameraViewController{
     if ([self.delegate_td respondsToSelector:@selector(dismissCamera:)]){
