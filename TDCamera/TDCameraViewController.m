@@ -205,14 +205,14 @@
     [takePhotoButton setImage:[UIImage imageNamed:@"camera_normal"] forState:UIControlStateNormal];
     [takePhotoButton setImage:[UIImage imageNamed:@"camera_down"] forState:UIControlStateHighlighted];
     [takePhotoButton setImage:[UIImage imageNamed:@"camera_disable"] forState:UIControlStateDisabled];
-    [takePhotoButton bk_whenTapped:^{
+    [takePhotoButton bk_addEventHandler:^(id sender) {
         TDCameraViewController *sself = wself;
         if (sself) {
             [sself takePhoto];
         }else{
             NSLog(@"<self> dealloc before we could run this code.");
         }
-    }];
+    } forControlEvents:UIControlEventTouchUpInside];
     
 //    UILongPressGestureRecognizer *lpgr = [UILongPressGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
 //        
