@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "按钮1_0002_圆角矩形-18-副本.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "按钮1_0003_圆角矩形-17-副本-4.png"
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",

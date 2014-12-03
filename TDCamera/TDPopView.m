@@ -27,11 +27,11 @@
         __weak typeof(self) wself = self;
         // 弹框内容
         self.frame = frame;
-        self.backgroundColor = [UIColor grayColor];
+//        self.backgroundColor = [UIColor grayColor];
         // 幽灵按钮
         UIButton* ghostButton = [[UIButton alloc] init];
         [self addSubview:ghostButton];
-        ghostButton.backgroundColor = [UIColor greenColor];
+//        ghostButton.backgroundColor = [UIColor greenColor];
         [ghostButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0);
             make.top.equalTo(@0);
@@ -45,6 +45,7 @@
             make.height.equalTo(@30);
         }];
         UILabel* ghostLabel = [[UILabel alloc] init];
+        ghostLabel.textColor = [UIColor whiteColor];
         ghostLabel.text = @"阴影";
         [ghostButton addSubview:ghostLabel];
         [ghostLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,7 +61,7 @@
         // 前后相机转换按钮
         UIButton* frontBackButton = [[UIButton alloc] init];
         [self addSubview:frontBackButton];
-        frontBackButton.backgroundColor = [UIColor redColor];
+//        frontBackButton.backgroundColor = [UIColor redColor];
         [frontBackButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0);
             make.top.equalTo(ghostButton.mas_bottom);
@@ -76,6 +77,7 @@
             make.height.equalTo(@30);
         }];
         UILabel* frontBackLabel = [[UILabel alloc] init];
+        frontBackLabel.textColor = [UIColor whiteColor];
         frontBackLabel.text = @"前后";
         [frontBackButton addSubview:frontBackLabel];
         [frontBackLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -85,7 +87,7 @@
         // 网格按钮
         UIButton* gridButton = [[UIButton alloc] init];
         [self addSubview:gridButton];
-        gridButton.backgroundColor = [UIColor blueColor];
+//        gridButton.backgroundColor = [UIColor blueColor];
         [gridButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0);
             make.top.equalTo(frontBackButton.mas_bottom);
@@ -102,6 +104,7 @@
             make.height.equalTo(@30);
         }];
         UILabel* gridLabel = [[UILabel alloc] init];
+        gridLabel.textColor = [UIColor whiteColor];
         gridLabel.text = @"网格";
         [gridButton addSubview:gridLabel];
         [gridLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -110,7 +113,7 @@
         }];
         // 画质按钮
         UIButton* qualityButton = [[UIButton alloc] init];
-        qualityButton.backgroundColor = [UIColor yellowColor];
+//        qualityButton.backgroundColor = [UIColor yellowColor];
         [self addSubview:qualityButton];
         [qualityButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(@0);
@@ -128,6 +131,7 @@
             make.height.equalTo(@30);
         }];
         UILabel* qualityLabel = [[UILabel alloc] init];
+        qualityLabel.textColor = [UIColor whiteColor];
         qualityLabel.text = @"画质";
         [qualityButton addSubview:qualityLabel];
         [qualityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -135,6 +139,7 @@
             make.centerY.equalTo(ghostImageView.mas_centerY);
         }];
         UILabel* qualityTitleLabel = [[UILabel alloc] init];
+        qualityTitleLabel.textColor = [UIColor whiteColor];
         qualityTitleLabel.text = @"高清";
         [qualityButton addSubview:qualityTitleLabel];
         [qualityTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -143,7 +148,7 @@
         }];
         // 重置按钮
         UIButton* resetButton = [[UIButton alloc] init];
-        resetButton.backgroundColor = [UIColor purpleColor];
+//        resetButton.backgroundColor = [UIColor purpleColor];
         [self addSubview:resetButton];
         [resetButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(@0);
@@ -160,26 +165,13 @@
             make.height.equalTo(@30);
         }];
         UILabel* resetLabel = [[UILabel alloc] init];
+        resetLabel.textColor = [UIColor whiteColor];
         resetLabel.text = @"重置";
         [resetButton addSubview:resetLabel];
         [resetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(resetImageView.mas_right).offset(20);
             make.centerY.equalTo(@0);
         }];
-        
-        
-//        UILabel* qualityLabel = [[UILabel alloc] init];
-//        qualityLabel.text = @"画质";
-//        qualityLabel.textColor = [UIColor whiteColor];
-//        [qualityButton addSubview:qualityLabel];
-//        [qualityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.left.equalTo(@0);
-//            make.right.equalTo(@0);
-//            make.top.equalTo(@0);
-//            make.bottom.equalTo(@0);
-//            make.width.equalTo(@40);
-//            make.height.equalTo(@40);
-//        }];
     }
     return self;
 }

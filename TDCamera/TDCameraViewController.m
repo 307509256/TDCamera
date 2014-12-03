@@ -127,17 +127,17 @@
     [settingButton bk_whenTapped:^{
         TDCameraViewController *sself = wself;
         if (sself) {
-            [UIAlertView bk_showAlertViewWithTitle:@"敬请期待" message:@"功能未完善,请等待下一个版本吧!" cancelButtonTitle:@"确定" otherButtonTitles:nil handler:nil];
+//            [UIAlertView bk_showAlertViewWithTitle:@"敬请期待" message:@"功能未完善,请等待下一个版本吧!" cancelButtonTitle:@"确定" otherButtonTitles:nil handler:nil];
             
-//            TDPopView* popContent = [[TDPopView alloc] initWithDelegate:self];
-//            CMPopTipView* popTipView = [[CMPopTipView alloc] initWithCustomView:popContent];
-//            popTipView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
-//            popTipView.dismissTapAnywhere = YES;
-//            popTipView.has3DStyle = NO;
-//            popTipView.cornerRadius = 8.0;
-//            popTipView.sidePadding = 8.0f;
-//            popTipView.hasShadow = NO;
-//            [popTipView presentPointingAtView:settingButton inView:sself.view animated:YES];
+            TDPopView* popContent = [[TDPopView alloc] initWithDelegate:wself];
+            CMPopTipView* popTipView = [[CMPopTipView alloc] initWithCustomView:popContent];
+            popTipView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
+            popTipView.dismissTapAnywhere = YES;
+            popTipView.has3DStyle = NO;
+            popTipView.cornerRadius = 4.0;
+            popTipView.sidePadding = 4.0f;
+            popTipView.hasShadow = NO;
+            [popTipView presentPointingAtView:settingButton inView:sself.view animated:YES];
         }else{
             NSLog(@"<self> dealloc before we could run this code.");
         }
