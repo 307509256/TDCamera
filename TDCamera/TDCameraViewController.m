@@ -15,7 +15,7 @@
 #import "DBCameraManager.h"
 #import "CMPopTipView.h"
 #import "TDPopView.h"
-#import "UIImage+fixOrientation.h"
+//#import "UIImage+fixOrientation.h"
 
 // 相机视图高度占屏幕的比率
 #define TD_CAMERA_VIEW_HEIGHT_MULTIPLY 0.7
@@ -291,6 +291,7 @@
     // 构建幽灵
     if (self.images.count != 0) {
         UIImage* image = self.images.lastObject;
+        image = [UIImage imageWithCGImage:[image CGImage] scale:1.0 orientation: UIImageOrientationRight];
 
         UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
         imageView.alpha = 0.3;
@@ -333,7 +334,7 @@
 
 #pragma mark - DBCameraViewControllerDelegate
 - (void) camera:(id)cameraViewController didFinishWithImage:(UIImage *)image withMetadata:(NSDictionary *)metadata{
-    [self.images addObject:[image fixOrientation]];
+    [self.images addObject:image];
     [self updateDotView];
     [self updateGhost];
     [self updateTakePhotoButton];
