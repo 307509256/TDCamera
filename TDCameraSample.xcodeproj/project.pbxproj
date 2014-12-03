@@ -59,6 +59,7 @@
 		A03E495D1A10A6C80064923C /* UIView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E49381A10A6C80064923C /* UIView+BlocksKit.m */; };
 		A03E495E1A10A6C80064923C /* UIWebView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E493A1A10A6C80064923C /* UIWebView+BlocksKit.m */; };
 		A06797EF1A120564008AC9D8 /* TDDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = A06797EE1A120564008AC9D8 /* TDDotView.m */; };
+		A077A1551A2EE6EF00DF729F /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = A077A1541A2EE6EF00DF729F /* UIImage+fixOrientation.m */; };
 		A099C6E01A0B67EE00313401 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C6DF1A0B67EE00313401 /* main.m */; };
 		A099C6E31A0B67EE00313401 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C6E21A0B67EE00313401 /* AppDelegate.m */; };
 		A099C6E61A0B67EE00313401 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C6E51A0B67EE00313401 /* ViewController.m */; };
@@ -392,6 +393,8 @@
 		A03E493A1A10A6C80064923C /* UIWebView+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+BlocksKit.m"; sourceTree = "<group>"; };
 		A06797ED1A120564008AC9D8 /* TDDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDotView.h; sourceTree = "<group>"; };
 		A06797EE1A120564008AC9D8 /* TDDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDotView.m; sourceTree = "<group>"; };
+		A077A1531A2EE6EF00DF729F /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
+		A077A1541A2EE6EF00DF729F /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
 		A099C6DA1A0B67EE00313401 /* TDCameraSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDCameraSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A099C6DE1A0B67EE00313401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A099C6DF1A0B67EE00313401 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1029,6 +1032,15 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		A077A1521A2EE6EF00DF729F /* UIImage+fixOrientation */ = {
+			isa = PBXGroup;
+			children = (
+				A077A1531A2EE6EF00DF729F /* UIImage+fixOrientation.h */,
+				A077A1541A2EE6EF00DF729F /* UIImage+fixOrientation.m */,
+			);
+			path = "UIImage+fixOrientation";
+			sourceTree = "<group>";
+		};
 		A099C6D11A0B67EE00313401 = {
 			isa = PBXGroup;
 			children = (
@@ -1105,6 +1117,7 @@
 				A0BE6C6D1A14857100E4EC85 /* TDMotionManager.h */,
 				A0BE6C6E1A14857100E4EC85 /* TDMotionManager.m */,
 				A0B8AD511A1DC9980045EFAD /* icon.xcassets */,
+				A077A1521A2EE6EF00DF729F /* UIImage+fixOrientation */,
 				A0BB69941A25CB380018F538 /* CMPopTipView */,
 				A026622F1A132A91000F97A9 /* NYXImagesKit */,
 				A099C76B1A0B6B6800313401 /* DBCamera */,
@@ -1831,6 +1844,7 @@
 				A099CB311A0B6CFB00313401 /* GPUImageAverageLuminanceThresholdFilter.m in Sources */,
 				A03E49511A10A6C80064923C /* NSObject+A2DynamicDelegate.m in Sources */,
 				A099CB3A1A0B6CFB00313401 /* GPUImageChromaKeyFilter.m in Sources */,
+				A077A1551A2EE6EF00DF729F /* UIImage+fixOrientation.m in Sources */,
 				A099CB331A0B6CFB00313401 /* GPUImageBoxBlurFilter.m in Sources */,
 				A099C7B91A0B6B6800313401 /* DBCameraViewController.m in Sources */,
 				A099CB981A0B6CFB00313401 /* GPUImageRawDataOutput.m in Sources */,

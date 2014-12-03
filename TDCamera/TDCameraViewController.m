@@ -15,6 +15,7 @@
 #import "DBCameraManager.h"
 #import "CMPopTipView.h"
 #import "TDPopView.h"
+#import "UIImage+fixOrientation.h"
 
 // 相机视图高度占屏幕的比率
 #define TD_CAMERA_VIEW_HEIGHT_MULTIPLY 0.7
@@ -276,7 +277,6 @@
     }
 }
 -(void) updateGhost{
-    return;
     // 清空幽灵
     NSMutableArray* views = [@[] mutableCopy];
     for (UIView* viewWith1Tag in [self.view subviews]) {
@@ -295,8 +295,8 @@
         UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
         imageView.alpha = 0.3;
         imageView.tag = 1;
-        CGSize size = [[UIScreen mainScreen] bounds].size;
-        imageView.frame = CGRectMake(0, 0, size.width, size.height*TD_CAMERA_VIEW_HEIGHT_MULTIPLY);
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        [imageView setClipsToBounds:YES];
         
         // 方向
 //        UIDeviceOrientation o = [[self valueForKey:@"_deviceOrientation"] integerValue];
@@ -309,6 +309,13 @@
         
         
         [self.view addSubview:imageView];
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@0);
+            make.left.equalTo(@0);
+            make.right.equalTo(@0);
+            CGSize size = [[UIScreen mainScreen] bounds].size;
+            make.height.equalTo(@(size.height*TD_CAMERA_VIEW_HEIGHT_MULTIPLY));
+        }];
     }
 }
 
@@ -326,7 +333,7 @@
 
 #pragma mark - DBCameraViewControllerDelegate
 - (void) camera:(id)cameraViewController didFinishWithImage:(UIImage *)image withMetadata:(NSDictionary *)metadata{
-    [self.images addObject:image];
+    [self.images addObject:[image fixOrientation]];
     [self updateDotView];
     [self updateGhost];
     [self updateTakePhotoButton];
