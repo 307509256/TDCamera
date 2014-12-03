@@ -215,24 +215,30 @@
         }
     } forControlEvents:UIControlEventTouchUpInside];
     
-//    UILongPressGestureRecognizer *lpgr = [UILongPressGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
-//        
-//        static NSTimer* timer = nil;
-//        
-//        if (state == UIGestureRecognizerStateBegan) {
-//            timer = [NSTimer bk_scheduledTimerWithTimeInterval:0.1 block:^(NSTimer *timer) {
-//                [self takePhoto];
-//            } repeats:YES];
-//        }
-//        if (state == UIGestureRecognizerStateEnded) {
-//            if (timer) {
-//                [timer invalidate];
-//                timer = nil;
-//            }
-//        }
-//        
-//    }];
-//    [takePhotoButton addGestureRecognizer:lpgr];
+    UILongPressGestureRecognizer *lpgr = [UILongPressGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
+        
+        static NSTimer* timer = nil;
+        
+        if (state == UIGestureRecognizerStateBegan) {
+            // 定时器
+            timer = [NSTimer bk_scheduledTimerWithTimeInterval:0.1 block:^(NSTimer *timer) {
+                [self takePhoto];
+            } repeats:YES];
+            // 取消自动对焦
+            self.cameraManager.focusMode = AVCaptureFocusModeLocked;
+        }
+        if (state == UIGestureRecognizerStateEnded) {
+            // 定时器
+            if (timer) {
+                [timer invalidate];
+                timer = nil;
+            }
+            // 启动自动对焦
+            self.cameraManager.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+        }
+        
+    }];
+    [takePhotoButton addGestureRecognizer:lpgr];
 
 }
 
@@ -291,6 +297,7 @@
     // 构建幽灵
     if (self.images.count != 0) {
         UIImage* image = self.images.lastObject;
+        // 方向修正
         image = [UIImage imageWithCGImage:[image CGImage] scale:1.0 orientation: UIImageOrientationRight];
 
         UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
@@ -298,16 +305,6 @@
         imageView.tag = 1;
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         [imageView setClipsToBounds:YES];
-        
-        // 方向
-//        UIDeviceOrientation o = [[self valueForKey:@"_deviceOrientation"] integerValue];
-//        CGFloat angle = 0;
-//        if ( o == UIDeviceOrientationLandscapeLeft ) angle = M_PI_2;
-//        else if ( o == UIDeviceOrientationLandscapeRight ) angle = -M_PI_2;
-//        else if ( o == UIDeviceOrientationPortraitUpsideDown ) angle = M_PI;
-//        imageView.transform = CGAffineTransformRotate(CGAffineTransformMakeTranslation(160.0f-imageView.center.x,240.0f-imageView.center.y),angle);
-//        imageView.contentMode = UIViewContentModeTop;
-        
         
         [self.view addSubview:imageView];
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
