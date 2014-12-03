@@ -222,10 +222,10 @@
         if (state == UIGestureRecognizerStateBegan) {
             // 定时器
             timer = [NSTimer bk_scheduledTimerWithTimeInterval:0.1 block:^(NSTimer *timer) {
-                [self takePhoto];
+                [wself takePhoto];
             } repeats:YES];
             // 取消自动对焦
-            self.cameraManager.focusMode = AVCaptureFocusModeLocked;
+            wself.cameraManager.focusMode = AVCaptureFocusModeLocked;
         }
         if (state == UIGestureRecognizerStateEnded) {
             // 定时器
@@ -234,7 +234,7 @@
                 timer = nil;
             }
             // 启动自动对焦
-            self.cameraManager.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+            wself.cameraManager.focusMode = AVCaptureFocusModeContinuousAutoFocus;
         }
         
     }];
