@@ -16,6 +16,7 @@
 #import "CMPopTipView.h"
 #import "TDPopView.h"
 //#import "UIImage+fixOrientation.h"
+#import "DBCameraGridView.h"
 
 // 相机视图高度占屏幕的比率
 #define TD_CAMERA_VIEW_HEIGHT_MULTIPLY 0.7
@@ -78,6 +79,13 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
     
     // 设置manager
     self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPreset1280x720;
+    
+    // 网格
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:TD_CAMERA_KEY_HasGrid]) {
+        [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            self.cameraGridView.alpha = 1.0;
+        } completion:NULL];
+    }
     
     // block weak
     __weak TDCameraViewController *wself = self;
@@ -390,6 +398,9 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
 }
 -(void) popView:(TDPopView*) popView hasGrid:(BOOL) hasGrid{
     [[NSUserDefaults standardUserDefaults] setBool:hasGrid forKey:TD_CAMERA_KEY_HasGrid];
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.cameraGridView.alpha = (hasGrid ? 1.0 : 0.0);
+    } completion:NULL];
 }
 -(void) popView:(TDPopView*) popView quality:(TD_CAMERA_QUALITY) quality{
     [[NSUserDefaults standardUserDefaults] setInteger:quality forKey:TD_CAMERA_KEY_QUALITY];
