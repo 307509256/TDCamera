@@ -77,10 +77,18 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
         [[NSUserDefaults standardUserDefaults] setInteger:TD_CAMERA_FPS_7 forKey:TD_CAMERA_KEY_FPS];
     }
     
-    // 设置manager
-    self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPreset1280x720;
-    
-    // 网格
+    // 设置清晰度
+    switch ([[NSUserDefaults standardUserDefaults] integerForKey:TD_CAMERA_KEY_QUALITY]) {
+        case TD_CAMERA_QUALITY_NORMAL:
+            self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPresetMedium;
+            break;
+        case TD_CAMERA_QUALITY_HIGH:
+            self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPreset1920x1080;
+            break;
+        default:
+            break;
+    }
+    // 设置网格
     if ([[NSUserDefaults standardUserDefaults] boolForKey:TD_CAMERA_KEY_HasGrid]) {
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             self.cameraGridView.alpha = 1.0;
