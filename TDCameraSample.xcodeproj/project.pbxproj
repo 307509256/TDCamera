@@ -58,6 +58,12 @@
 		A03E495C1A10A6C80064923C /* UITextField+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E49361A10A6C80064923C /* UITextField+BlocksKit.m */; };
 		A03E495D1A10A6C80064923C /* UIView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E49381A10A6C80064923C /* UIView+BlocksKit.m */; };
 		A03E495E1A10A6C80064923C /* UIWebView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E493A1A10A6C80064923C /* UIWebView+BlocksKit.m */; };
+		A05D84921A3050CF008111A8 /* FICImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D84861A3050CF008111A8 /* FICImageCache.m */; };
+		A05D84931A3050CF008111A8 /* FICImageFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D84881A3050CF008111A8 /* FICImageFormat.m */; };
+		A05D84941A3050CF008111A8 /* FICImageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D848A1A3050CF008111A8 /* FICImageTable.m */; };
+		A05D84951A3050CF008111A8 /* FICImageTableChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D848C1A3050CF008111A8 /* FICImageTableChunk.m */; };
+		A05D84961A3050CF008111A8 /* FICImageTableEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D848E1A3050CF008111A8 /* FICImageTableEntry.m */; };
+		A05D84971A3050CF008111A8 /* FICUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A05D84911A3050CF008111A8 /* FICUtilities.m */; };
 		A06797EF1A120564008AC9D8 /* TDDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = A06797EE1A120564008AC9D8 /* TDDotView.m */; };
 		A077A1551A2EE6EF00DF729F /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = A077A1541A2EE6EF00DF729F /* UIImage+fixOrientation.m */; };
 		A099C6E01A0B67EE00313401 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A099C6DF1A0B67EE00313401 /* main.m */; };
@@ -391,6 +397,21 @@
 		A03E49381A10A6C80064923C /* UIView+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BlocksKit.m"; sourceTree = "<group>"; };
 		A03E49391A10A6C80064923C /* UIWebView+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+BlocksKit.h"; sourceTree = "<group>"; };
 		A03E493A1A10A6C80064923C /* UIWebView+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+BlocksKit.m"; sourceTree = "<group>"; };
+		A05D84831A3050CF008111A8 /* FICEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICEntity.h; sourceTree = "<group>"; };
+		A05D84841A3050CF008111A8 /* FICImageCache+FICErrorLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FICImageCache+FICErrorLogging.h"; sourceTree = "<group>"; };
+		A05D84851A3050CF008111A8 /* FICImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageCache.h; sourceTree = "<group>"; };
+		A05D84861A3050CF008111A8 /* FICImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageCache.m; sourceTree = "<group>"; };
+		A05D84871A3050CF008111A8 /* FICImageFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageFormat.h; sourceTree = "<group>"; };
+		A05D84881A3050CF008111A8 /* FICImageFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageFormat.m; sourceTree = "<group>"; };
+		A05D84891A3050CF008111A8 /* FICImageTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageTable.h; sourceTree = "<group>"; };
+		A05D848A1A3050CF008111A8 /* FICImageTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageTable.m; sourceTree = "<group>"; };
+		A05D848B1A3050CF008111A8 /* FICImageTableChunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageTableChunk.h; sourceTree = "<group>"; };
+		A05D848C1A3050CF008111A8 /* FICImageTableChunk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageTableChunk.m; sourceTree = "<group>"; };
+		A05D848D1A3050CF008111A8 /* FICImageTableEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImageTableEntry.h; sourceTree = "<group>"; };
+		A05D848E1A3050CF008111A8 /* FICImageTableEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICImageTableEntry.m; sourceTree = "<group>"; };
+		A05D848F1A3050CF008111A8 /* FICImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICImports.h; sourceTree = "<group>"; };
+		A05D84901A3050CF008111A8 /* FICUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICUtilities.h; sourceTree = "<group>"; };
+		A05D84911A3050CF008111A8 /* FICUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICUtilities.m; sourceTree = "<group>"; };
 		A06797ED1A120564008AC9D8 /* TDDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDotView.h; sourceTree = "<group>"; };
 		A06797EE1A120564008AC9D8 /* TDDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDotView.m; sourceTree = "<group>"; };
 		A077A1531A2EE6EF00DF729F /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
@@ -1032,6 +1053,28 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		A05D84821A3050CF008111A8 /* FastImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				A05D84831A3050CF008111A8 /* FICEntity.h */,
+				A05D84841A3050CF008111A8 /* FICImageCache+FICErrorLogging.h */,
+				A05D84851A3050CF008111A8 /* FICImageCache.h */,
+				A05D84861A3050CF008111A8 /* FICImageCache.m */,
+				A05D84871A3050CF008111A8 /* FICImageFormat.h */,
+				A05D84881A3050CF008111A8 /* FICImageFormat.m */,
+				A05D84891A3050CF008111A8 /* FICImageTable.h */,
+				A05D848A1A3050CF008111A8 /* FICImageTable.m */,
+				A05D848B1A3050CF008111A8 /* FICImageTableChunk.h */,
+				A05D848C1A3050CF008111A8 /* FICImageTableChunk.m */,
+				A05D848D1A3050CF008111A8 /* FICImageTableEntry.h */,
+				A05D848E1A3050CF008111A8 /* FICImageTableEntry.m */,
+				A05D848F1A3050CF008111A8 /* FICImports.h */,
+				A05D84901A3050CF008111A8 /* FICUtilities.h */,
+				A05D84911A3050CF008111A8 /* FICUtilities.m */,
+			);
+			path = FastImageCache;
+			sourceTree = "<group>";
+		};
 		A077A1521A2EE6EF00DF729F /* UIImage+fixOrientation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1117,6 +1160,7 @@
 				A0BE6C6D1A14857100E4EC85 /* TDMotionManager.h */,
 				A0BE6C6E1A14857100E4EC85 /* TDMotionManager.m */,
 				A0B8AD511A1DC9980045EFAD /* icon.xcassets */,
+				A05D84821A3050CF008111A8 /* FastImageCache */,
 				A077A1521A2EE6EF00DF729F /* UIImage+fixOrientation */,
 				A0BB69941A25CB380018F538 /* CMPopTipView */,
 				A026622F1A132A91000F97A9 /* NYXImagesKit */,
@@ -1817,8 +1861,10 @@
 				A099CB801A0B6CFB00313401 /* GPUImageMosaicFilter.m in Sources */,
 				A099CB911A0B6CFB00313401 /* GPUImagePixellatePositionFilter.m in Sources */,
 				A099CB591A0B6CFB00313401 /* GPUImageGaussianBlurFilter.m in Sources */,
+				A05D84971A3050CF008111A8 /* FICUtilities.m in Sources */,
 				A099C7C11A0B6B6800313401 /* DBCameraManager.m in Sources */,
 				A099CB831A0B6CFB00313401 /* GPUImageMovie.m in Sources */,
+				A05D84961A3050CF008111A8 /* FICImageTableEntry.m in Sources */,
 				A099CB8D1A0B6CFB00313401 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				A099CBA91A0B6CFB00313401 /* GPUImageSoftLightBlendFilter.m in Sources */,
 				A03E49491A10A6C80064923C /* NSOrderedSet+BlocksKit.m in Sources */,
@@ -1835,6 +1881,7 @@
 				A03E49591A10A6C80064923C /* UIGestureRecognizer+BlocksKit.m in Sources */,
 				A03E493C1A10A6C80064923C /* NSArray+BlocksKit.m in Sources */,
 				A099CB6E1A0B6CFB00313401 /* GPUImageKuwaharaRadius3Filter.m in Sources */,
+				A05D84951A3050CF008111A8 /* FICImageTableChunk.m in Sources */,
 				A099CB721A0B6CFB00313401 /* GPUImageLightenBlendFilter.m in Sources */,
 				A099CB731A0B6CFB00313401 /* GPUImageLinearBurnBlendFilter.m in Sources */,
 				A099CB8C1A0B6CFB00313401 /* GPUImageOverlayBlendFilter.m in Sources */,
@@ -1922,6 +1969,7 @@
 				A099CBA51A0B6CFB00313401 /* GPUImageSketchFilter.m in Sources */,
 				A099CB8B1A0B6CFB00313401 /* GPUImageOutput.m in Sources */,
 				A099CBAB1A0B6CFB00313401 /* GPUImageSourceOverBlendFilter.m in Sources */,
+				A05D84941A3050CF008111A8 /* FICImageTable.m in Sources */,
 				A099CBCA1A0B6CFB00313401 /* GPUImagePicture+TextureSubimage.m in Sources */,
 				A03E49481A10A6C80064923C /* NSObject+BKBlockObservation.m in Sources */,
 				A099CB551A0B6CFB00313401 /* GPUImageFilterPipeline.m in Sources */,
@@ -1990,6 +2038,7 @@
 				A099CBA21A0B6CFB00313401 /* GPUImageSharpenFilter.m in Sources */,
 				A099CB761A0B6CFB00313401 /* GPUImageLookupFilter.m in Sources */,
 				A099CB791A0B6CFB00313401 /* GPUImageLuminanceThresholdFilter.m in Sources */,
+				A05D84921A3050CF008111A8 /* FICImageCache.m in Sources */,
 				A099CB9C1A0B6CFB00313401 /* GPUImageRGBFilter.m in Sources */,
 				A0BB699A1A25DC020018F538 /* TDPopView.m in Sources */,
 				A099CB5D1A0B6CFB00313401 /* GPUImageGrayscaleFilter.m in Sources */,
@@ -2006,6 +2055,7 @@
 				A03E49451A10A6C80064923C /* NSMutableSet+BlocksKit.m in Sources */,
 				A03E494D1A10A6C80064923C /* A2DynamicDelegate.m in Sources */,
 				A099CBC61A0B6CFB00313401 /* GPUImageXYDerivativeFilter.m in Sources */,
+				A05D84931A3050CF008111A8 /* FICImageFormat.m in Sources */,
 				A099CB3D1A0B6CFB00313401 /* GPUImageColorBurnBlendFilter.m in Sources */,
 				A099CB891A0B6CFB00313401 /* GPUImageOpacityFilter.m in Sources */,
 				A099CB641A0B6CFB00313401 /* GPUImageHistogramEqualizationFilter.m in Sources */,
