@@ -150,6 +150,7 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
     }];
     // 设置按钮
     UIButton* settingButton = [[UIButton alloc] init];
+    __weak UIButton* wSettingButton = settingButton;
     [bottomBar addSubview:settingButton];
     UIImage* settingImage = [UIImage imageNamed:@"setting"];
     [settingButton setImage:settingImage forState:UIControlStateNormal];
@@ -172,7 +173,7 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
             popTipView.cornerRadius = 4.0;
             popTipView.sidePadding = 4.0f;
             popTipView.hasShadow = NO;
-            [popTipView presentPointingAtView:settingButton inView:sself.view animated:YES];
+            [popTipView presentPointingAtView:wSettingButton inView:sself.view animated:YES];
         }else{
             NSLog(@"<self> dealloc before we could run this code.");
         }
