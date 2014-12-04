@@ -22,16 +22,14 @@
     if (self) {
         self.delegate = delegate;
         CGRect frame = [[UIScreen mainScreen] bounds];
-        frame.size.width = frame.size.width / 8.0 * 7;
-        frame.size.height = frame.size.width /3.0 * 2;
+        frame.size.width = 260;
+        frame.size.height = 120;
         __weak typeof(self) wself = self;
         // 弹框内容
         self.frame = frame;
-//        self.backgroundColor = [UIColor grayColor];
         // 幽灵按钮
         UIButton* ghostButton = [[UIButton alloc] init];
         [self addSubview:ghostButton];
-//        ghostButton.backgroundColor = [UIColor greenColor];
         [ghostButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0);
             make.top.equalTo(@0);
@@ -41,15 +39,15 @@
         [ghostImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0).offset(4);
             make.centerY.equalTo(@0);
-            make.width.equalTo(@30);
-            make.height.equalTo(@30);
+            make.width.equalTo(@16);
+            make.height.equalTo(@16);
         }];
         UILabel* ghostLabel = [[UILabel alloc] init];
         ghostLabel.textColor = [UIColor whiteColor];
         ghostLabel.text = @"阴影";
         [ghostButton addSubview:ghostLabel];
         [ghostLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(ghostImageView.mas_right).offset(20);
+            make.left.equalTo(ghostImageView.mas_right).offset(8);
             make.centerY.equalTo(@0);
         }];
         [ghostButton bk_addEventHandler:^(id sender) {
@@ -61,7 +59,6 @@
         // 前后相机转换按钮
         UIButton* frontBackButton = [[UIButton alloc] init];
         [self addSubview:frontBackButton];
-//        frontBackButton.backgroundColor = [UIColor redColor];
         [frontBackButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0);
             make.top.equalTo(ghostButton.mas_bottom);
@@ -73,21 +70,20 @@
         [frontBackImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0).offset(4);
             make.centerY.equalTo(@0);
-            make.width.equalTo(@30);
-            make.height.equalTo(@30);
+            make.width.equalTo(@16);
+            make.height.equalTo(@16);
         }];
         UILabel* frontBackLabel = [[UILabel alloc] init];
         frontBackLabel.textColor = [UIColor whiteColor];
         frontBackLabel.text = @"前后";
         [frontBackButton addSubview:frontBackLabel];
         [frontBackLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(frontBackImageView.mas_right).offset(20);
+            make.left.equalTo(frontBackImageView.mas_right).offset(8);
             make.centerY.equalTo(@0);
         }];
         // 网格按钮
         UIButton* gridButton = [[UIButton alloc] init];
         [self addSubview:gridButton];
-//        gridButton.backgroundColor = [UIColor blueColor];
         [gridButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0);
             make.top.equalTo(frontBackButton.mas_bottom);
@@ -100,26 +96,25 @@
         [gridImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0).offset(4);
             make.centerY.equalTo(@0);
-            make.width.equalTo(@30);
-            make.height.equalTo(@30);
+            make.width.equalTo(@16);
+            make.height.equalTo(@16);
         }];
         UILabel* gridLabel = [[UILabel alloc] init];
         gridLabel.textColor = [UIColor whiteColor];
         gridLabel.text = @"网格";
         [gridButton addSubview:gridLabel];
         [gridLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(gridImageView.mas_right).offset(20);
+            make.left.equalTo(gridImageView.mas_right).offset(8);
             make.centerY.equalTo(@0);
         }];
         // 画质按钮
         UIButton* qualityButton = [[UIButton alloc] init];
-//        qualityButton.backgroundColor = [UIColor yellowColor];
         [self addSubview:qualityButton];
         [qualityButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(@0);
             make.right.equalTo(@0);
-            make.width.equalTo(ghostButton.mas_width);
-            make.bottom.equalTo(frontBackButton.mas_bottom);
+            make.width.equalTo(ghostButton.mas_width).offset(60);
+            make.bottom.equalTo(ghostButton.mas_bottom);
             make.left.equalTo(ghostButton.mas_right);
         }];
         UIImageView* qualityImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pop_quality"]];
@@ -127,33 +122,67 @@
         [qualityImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0).offset(4);
             make.centerY.equalTo(ghostImageView.mas_centerY);
-            make.width.equalTo(@30);
-            make.height.equalTo(@30);
+            make.width.equalTo(@16);
+            make.height.equalTo(@16);
         }];
         UILabel* qualityLabel = [[UILabel alloc] init];
         qualityLabel.textColor = [UIColor whiteColor];
         qualityLabel.text = @"画质";
         [qualityButton addSubview:qualityLabel];
         [qualityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(qualityImageView.mas_right).offset(20);
+            make.left.equalTo(qualityImageView.mas_right).offset(8);
             make.centerY.equalTo(ghostImageView.mas_centerY);
         }];
         UILabel* qualityTitleLabel = [[UILabel alloc] init];
-        qualityTitleLabel.textColor = [UIColor whiteColor];
+        qualityTitleLabel.textColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
+        qualityTitleLabel.font = [UIFont systemFontOfSize:10];
         qualityTitleLabel.text = @"高清";
         [qualityButton addSubview:qualityTitleLabel];
         [qualityTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(@0);
-            make.top.equalTo(qualityLabel.mas_bottom).offset(16);
+            make.left.equalTo(qualityLabel.mas_right).offset(20);
+            make.bottom.equalTo(qualityLabel.mas_bottom);
+        }];
+        // 帧按钮 fps
+        UIButton* fpsButton = [[UIButton alloc] init];
+        [self addSubview:fpsButton];
+        [fpsButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(@0);
+            make.top.equalTo(qualityButton.mas_bottom);
+            make.width.equalTo(qualityButton.mas_width);
+            make.height.equalTo(qualityButton.mas_height);
+        }];
+        UIImageView* fpsImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pop_fps"]];
+        [fpsButton addSubview:fpsImageView];
+        [fpsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@0).offset(4);
+            make.centerY.equalTo(@0);
+            make.width.equalTo(@16);
+            make.height.equalTo(@16);
+        }];
+        UILabel* fpsLabel = [[UILabel alloc] init];
+        fpsLabel.textColor = [UIColor whiteColor];
+        fpsLabel.text = @"连拍帧数";
+        [fpsButton addSubview:fpsLabel];
+        [fpsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(fpsImageView.mas_right).offset(8);
+            make.centerY.equalTo(@0);
+        }];
+        UILabel* fpsTitleLabel = [[UILabel alloc] init];
+        fpsTitleLabel.textColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
+        fpsTitleLabel.font = [UIFont systemFontOfSize:10];
+        fpsTitleLabel.text = @"15 fps";
+        [fpsButton addSubview:fpsTitleLabel];
+        [fpsTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(fpsLabel.mas_right).offset(20);
+            make.bottom.equalTo(fpsLabel.mas_bottom);
         }];
         // 重置按钮
         UIButton* resetButton = [[UIButton alloc] init];
-//        resetButton.backgroundColor = [UIColor purpleColor];
         [self addSubview:resetButton];
         [resetButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(@0);
             make.width.equalTo(qualityButton.mas_width);
-            make.top.equalTo(qualityButton.mas_bottom);
+            make.top.equalTo(fpsButton.mas_bottom);
             make.bottom.equalTo(@0);
         }];
         UIImageView* resetImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pop_reset"]];
@@ -161,16 +190,45 @@
         [resetImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0).offset(4);
             make.centerY.equalTo(@0);
-            make.width.equalTo(@30);
-            make.height.equalTo(@30);
+            make.width.equalTo(@16);
+            make.height.equalTo(@16);
         }];
         UILabel* resetLabel = [[UILabel alloc] init];
         resetLabel.textColor = [UIColor whiteColor];
         resetLabel.text = @"重置";
         [resetButton addSubview:resetLabel];
         [resetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(resetImageView.mas_right).offset(20);
+            make.left.equalTo(resetImageView.mas_right).offset(8);
             make.centerY.equalTo(@0);
+        }];
+        
+        // line
+        UIView* Line1 = [[UIView alloc] init];
+        Line1.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.3];
+        [self addSubview:Line1];
+        [Line1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@0);
+            make.right.equalTo(@0);
+            make.bottom.equalTo(ghostButton.mas_bottom);
+            make.height.equalTo(@1);
+        }];
+        UIView* Line2 = [[UIView alloc] init];
+        Line2.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.3];
+        [self addSubview:Line2];
+        [Line2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@0);
+            make.right.equalTo(@0);
+            make.bottom.equalTo(frontBackButton.mas_bottom);
+            make.height.equalTo(@1);
+        }];
+        UIView* Line3 = [[UIView alloc] init];
+        Line3.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.3];
+        [self addSubview:Line3];
+        [Line3 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@0);
+            make.right.equalTo(ghostButton.mas_right);
+            make.bottom.equalTo(@0);
+            make.width.equalTo(@1);
         }];
     }
     return self;
