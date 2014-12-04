@@ -81,7 +81,7 @@
         }];
         UILabel* frontBackLabel = [[UILabel alloc] init];
         frontBackLabel.textColor = [UIColor whiteColor];
-        frontBackLabel.text = @"前后";
+        frontBackLabel.text = @"模式";
         [frontBackButton addSubview:frontBackLabel];
         [frontBackLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(frontBackImageView.mas_right).offset(8);
@@ -234,6 +234,11 @@
             make.left.equalTo(resetImageView.mas_right).offset(8);
             make.centerY.equalTo(@0);
         }];
+        [resetButton bk_addEventHandler:^(id sender) {
+            if (wself.delegate && [wself.delegate respondsToSelector:@selector(popViewReset:)]) {
+                [wself.delegate popViewReset:wself];
+            }
+        } forControlEvents:UIControlEventTouchUpInside];
         
         // line
         UIView* Line1 = [[UIView alloc] init];

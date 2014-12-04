@@ -255,8 +255,35 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
         static NSTimer* timer = nil;
         
         if (state == UIGestureRecognizerStateBegan) {
+            NSTimeInterval interval = 0;
+            TD_CAMERA_FPS fps = [[NSUserDefaults standardUserDefaults] integerForKey:TD_CAMERA_KEY_FPS];
+            switch (fps) {
+                case TD_CAMERA_FPS_1:
+                    interval = 1.0/1;
+                    break;
+                case TD_CAMERA_FPS_2:
+                    interval = 1.0/2;
+                    break;
+                case TD_CAMERA_FPS_4:
+                    interval = 1.0/4;
+                    break;
+                case TD_CAMERA_FPS_5:
+                    interval = 1.0/5;
+                    break;
+                case TD_CAMERA_FPS_7:
+                    interval = 1.0/7;
+                    break;
+                case TD_CAMERA_FPS_10:
+                    interval = 1.0/10;
+                    break;
+                case TD_CAMERA_FPS_15:
+                    interval = 1.0/15;
+                    break;
+                default:
+                    break;
+            }
             // 定时器
-            timer = [NSTimer bk_scheduledTimerWithTimeInterval:0.1 block:^(NSTimer *timer) {
+            timer = [NSTimer bk_scheduledTimerWithTimeInterval:interval block:^(NSTimer *timer) {
                 [wself takePhoto];
             } repeats:YES];
             // 取消自动对焦
@@ -404,12 +431,25 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
 }
 -(void) popView:(TDPopView*) popView quality:(TD_CAMERA_QUALITY) quality{
     [[NSUserDefaults standardUserDefaults] setInteger:quality forKey:TD_CAMERA_KEY_QUALITY];
+    switch (quality) {
+        case TD_CAMERA_QUALITY_NORMAL:
+            self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPresetMedium;
+            break;
+        case TD_CAMERA_QUALITY_HIGH:
+            self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPreset1920x1080;
+            break;
+        default:
+            break;
+    }
 }
 -(void) popView:(TDPopView*) popView fps:(TD_CAMERA_FPS) fps{
     [[NSUserDefaults standardUserDefaults] setInteger:fps forKey:TD_CAMERA_KEY_FPS];
 }
 -(void) popViewReset:(TDPopView*) popView{
-    
+    [self.images removeAllObjects];
+    [self updateDotView];
+    [self updateGhost];
+    [self updateTakePhotoButton];
 }
 
 @end
