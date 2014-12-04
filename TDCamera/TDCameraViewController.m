@@ -330,6 +330,11 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
         UIImage* image = self.images.lastObject;
         // 方向修正
         image = [UIImage imageWithCGImage:[image CGImage] scale:1.0 orientation: UIImageOrientationRight];
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:TD_CAMERA_KEY_IsFront]) {
+            image = [UIImage imageWithCGImage:image.CGImage
+                                        scale:image.scale
+                                  orientation:UIImageOrientationLeftMirrored];
+        }
 
         UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
         imageView.alpha = 0.3;
@@ -380,6 +385,8 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
 }
 -(void) popView:(TDPopView*) popView front:(BOOL) isFront{
     [[NSUserDefaults standardUserDefaults] setBool:isFront forKey:TD_CAMERA_KEY_IsFront];
+    if ( [self.cameraManager hasMultipleCameras] )
+        [self.cameraManager cameraToggle];
 }
 -(void) popView:(TDPopView*) popView hasGrid:(BOOL) hasGrid{
     [[NSUserDefaults standardUserDefaults] setBool:hasGrid forKey:TD_CAMERA_KEY_HasGrid];
