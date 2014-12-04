@@ -22,6 +22,12 @@
 // 最多拍摄照片数量
 #define TD_IMAGE_COUNT 24
 
+NSString* const TD_CAMERA_KEY_IsGhost = @"TD_CAMERA_IsGhost";
+NSString* const TD_CAMERA_KEY_IsFront = @"TD_CAMERA_KEY_IsFront";
+NSString* const TD_CAMERA_KEY_HasGrid = @"TD_CAMERA_HasGrid";
+NSString* const TD_CAMERA_KEY_QUALITY = @"TD_CAMERA_QUALITY";
+NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
+
 @interface TDCameraViewController ()<DBCameraViewControllerDelegate,TDPopViewDelegate>
 @property (weak,nonatomic) id<TDCameraViewControllerDelegate> delegate_td;
 @property (nonatomic) NSMutableArray* images;
@@ -54,6 +60,21 @@
     [super viewDidLoad];
     self.view.frame = [[UIScreen mainScreen] bounds];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    // 初始化配置
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:TD_CAMERA_KEY_IsGhost] == nil) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:TD_CAMERA_KEY_IsGhost];
+    }
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:TD_CAMERA_KEY_IsFront];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:TD_CAMERA_KEY_HasGrid] == nil) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:TD_CAMERA_KEY_HasGrid];
+    }
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:TD_CAMERA_KEY_QUALITY] == nil) {
+        [[NSUserDefaults standardUserDefaults] setInteger:TD_CAMERA_QUALITY_NORMAL forKey:TD_CAMERA_KEY_QUALITY];
+    }
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:TD_CAMERA_KEY_FPS] == nil) {
+        [[NSUserDefaults standardUserDefaults] setInteger:TD_CAMERA_FPS_7 forKey:TD_CAMERA_KEY_FPS];
+    }
     
     // 设置manager
     self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPreset1280x720;
@@ -130,6 +151,12 @@
 //            [UIAlertView bk_showAlertViewWithTitle:@"敬请期待" message:@"功能未完善,请等待下一个版本吧!" cancelButtonTitle:@"确定" otherButtonTitles:nil handler:nil];
             
             TDPopView* popContent = [[TDPopView alloc] initWithDelegate:wself];
+            popContent.isGhost = [[NSUserDefaults standardUserDefaults] boolForKey:TD_CAMERA_KEY_IsGhost];
+            popContent.isFront = [[NSUserDefaults standardUserDefaults] boolForKey:TD_CAMERA_KEY_IsFront];
+            popContent.hasGrid = [[NSUserDefaults standardUserDefaults] boolForKey:TD_CAMERA_KEY_HasGrid];
+            popContent.quality = [[NSUserDefaults standardUserDefaults] integerForKey:TD_CAMERA_KEY_QUALITY];
+            popContent.fps = [[NSUserDefaults standardUserDefaults] integerForKey:TD_CAMERA_KEY_FPS];
+            
             CMPopTipView* popTipView = [[CMPopTipView alloc] initWithCustomView:popContent];
             popTipView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
             popTipView.dismissTapAnywhere = YES;
@@ -294,6 +321,10 @@
         [view removeFromSuperview];
     }
     
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:TD_CAMERA_KEY_IsGhost]) {
+        return;
+    }
+    
     // 构建幽灵
     if (self.images.count != 0) {
         UIImage* image = self.images.lastObject;
@@ -306,7 +337,7 @@
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         [imageView setClipsToBounds:YES];
         
-        [self.view addSubview:imageView];
+        [self.view insertSubview:imageView atIndex:1];
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(@0);
             make.left.equalTo(@0);
@@ -343,8 +374,24 @@
     }
 }
 #pragma mark - TDPopViewDelegate
-- (void) popView:(TDPopView*) popView ghost:(BOOL) isGhost{
-
+-(void) popView:(TDPopView*) popView ghost:(BOOL) isGhost{
+    [[NSUserDefaults standardUserDefaults] setBool:isGhost forKey:TD_CAMERA_KEY_IsGhost];
+    [self updateGhost];
+}
+-(void) popView:(TDPopView*) popView front:(BOOL) isFront{
+    [[NSUserDefaults standardUserDefaults] setBool:isFront forKey:TD_CAMERA_KEY_IsFront];
+}
+-(void) popView:(TDPopView*) popView hasGrid:(BOOL) hasGrid{
+    [[NSUserDefaults standardUserDefaults] setBool:hasGrid forKey:TD_CAMERA_KEY_HasGrid];
+}
+-(void) popView:(TDPopView*) popView quality:(TD_CAMERA_QUALITY) quality{
+    [[NSUserDefaults standardUserDefaults] setInteger:quality forKey:TD_CAMERA_KEY_QUALITY];
+}
+-(void) popView:(TDPopView*) popView fps:(TD_CAMERA_FPS) fps{
+    [[NSUserDefaults standardUserDefaults] setInteger:fps forKey:TD_CAMERA_KEY_FPS];
+}
+-(void) popViewReset:(TDPopView*) popView{
+    
 }
 
 @end

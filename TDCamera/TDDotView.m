@@ -24,9 +24,12 @@
 
 // 点的直径
 #define TD_DOT_DIA 4.f
+#define TD_DOT_DIA_BIG 6.f
 
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
+    
+    CGFloat dia = TD_DOT_DIA_BIG;
     
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextSetFillColor(ctx, CGColorGetComponents([[UIColor colorWithRed:0 green:204/255.0 blue:1 alpha:1] CGColor]));
@@ -35,9 +38,10 @@
 
         if (i == self.index) {
             CGContextSetFillColor(ctx, CGColorGetComponents([[UIColor colorWithRed:1 green:1 blue:1 alpha:1] CGColor]));
+            dia = TD_DOT_DIA;
         }
         
-        CGRect docFrame = CGRectMake(rect.size.width/self.count*i + rect.size.width/self.count/2 - TD_DOT_DIA/2, rect.size.height/2 - TD_DOT_DIA/2, TD_DOT_DIA, TD_DOT_DIA);
+        CGRect docFrame = CGRectMake(rect.size.width/self.count*i + rect.size.width/self.count/2 - dia/2, rect.size.height/2 - dia/2, dia, dia);
         CGContextAddEllipseInRect(ctx, docFrame);
         CGContextFillPath(ctx);
     }
