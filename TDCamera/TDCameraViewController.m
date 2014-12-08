@@ -83,7 +83,7 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
             self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPresetMedium;
             break;
         case TD_CAMERA_QUALITY_HIGH:
-            self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPreset1920x1080;
+            self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPresetHigh;
             break;
         default:
             break;
@@ -445,7 +445,7 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
             self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPresetMedium;
             break;
         case TD_CAMERA_QUALITY_HIGH:
-            self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPreset1920x1080;
+            self.cameraManager.captureSession.sessionPreset = AVCaptureSessionPresetHigh;
             break;
         default:
             break;
