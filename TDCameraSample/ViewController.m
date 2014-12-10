@@ -10,6 +10,7 @@
 #import "TDCameraViewController.h"
 #import "TDLookView.h"
 #import "Masonry.h"
+#import "NYXImagesKit.h"
 
 @interface ViewController ()<TDCameraViewControllerDelegate>
 
@@ -34,7 +35,13 @@
 
 - (void) camera:(id)cameraViewController didFinishWithImageArray:(NSArray *)images withMetadata:(NSDictionary *)metadata{
     UIViewController* next = [[UIViewController alloc] init];
-    TDLookView* lookview = [[TDLookView alloc] initWithImages:images];
+    // 图片压缩
+    NSMutableArray* imagesNormal = [NSMutableArray arrayWithCapacity:images.count];
+    for (UIImage* img in images) {
+        [imagesNormal addObject:[img scaleToFitSize:[UIScreen mainScreen].bounds.size]];
+    }
+    
+    TDLookView* lookview = [[TDLookView alloc] initWithImages:imagesNormal];
     [next.view addSubview:lookview];
     [lookview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@84);
