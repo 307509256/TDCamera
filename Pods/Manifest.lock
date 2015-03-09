@@ -1,0 +1,33 @@
+PODS:
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - CMPopTipView (2.2.0)
+  - Masonry (0.6.1)
+  - NYXImagesKit (2.3)
+
+DEPENDENCIES:
+  - BlocksKit (= 2.2.5)
+  - CMPopTipView (= 2.2.0)
+  - Masonry (= 0.6.1)
+  - NYXImagesKit (= 2.3)
+
+SPEC CHECKSUMS:
+  BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
+  CMPopTipView: f731ea93316c4f964d3d5d8e71b4ba0ae30bf5a4
+  Masonry: 2cb49fd14d203d2db5ca6bb017135b235dde9980
+  NYXImagesKit: 1c9f228ae78fab475d267b3b3a1308e0fba11731
+
+COCOAPODS: 0.35.0
