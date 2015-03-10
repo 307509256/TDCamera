@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-RRFPSBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>169DC30F9DF3C210694E9866</key>
+		<key>5C37E4EA43A6B2A29C6F2ADB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39E0887A02E00344D4695555</key>
+		<key>627C9991E55B22CCAFDB7210</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5491D17DEA025076C24F99AB</key>
+		<key>819FA85886F2C6941EE46B13</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A27ECC73E05C005286BAE9D6</key>
+		<key>91A0063F17F2EF8498ACCE07</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F327384A0317626F2E16CA4F</key>
+		<key>9C08C625EC16090F036612A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B89FF3186CD90D52363D94E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

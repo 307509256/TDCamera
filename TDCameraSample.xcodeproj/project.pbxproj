@@ -213,6 +213,7 @@
 		A099CBCC1A0B6CFB00313401 /* GPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A099CB281A0B6CFB00313401 /* GPUImageView.m */; };
 		A0A0BC1E1AAD7021008F1C97 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A099C6EC1A0B67EE00313401 /* LaunchScreen.xib */; };
 		A0A0BC1F1AAD70F8008F1C97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A099C6E71A0B67EE00313401 /* Main.storyboard */; };
+		A0A0BC221AAD71EA008F1C97 /* TDBrowseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC211AAD71EA008F1C97 /* TDBrowseView.m */; };
 		A0B8AD521A1DC9980045EFAD /* icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B8AD511A1DC9980045EFAD /* icon.xcassets */; };
 		A0BB699A1A25DC020018F538 /* TDPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB69991A25DC020018F538 /* TDPopView.m */; };
 		A0BE6C6F1A14857100E4EC85 /* TDMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BE6C6E1A14857100E4EC85 /* TDMotionManager.m */; };
@@ -642,6 +643,8 @@
 		A099CB261A0B6CFB00313401 /* GPUImagePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImagePicture.m; sourceTree = "<group>"; };
 		A099CB271A0B6CFB00313401 /* GPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageView.h; sourceTree = "<group>"; };
 		A099CB281A0B6CFB00313401 /* GPUImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageView.m; sourceTree = "<group>"; };
+		A0A0BC201AAD71EA008F1C97 /* TDBrowseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBrowseView.h; sourceTree = "<group>"; };
+		A0A0BC211AAD71EA008F1C97 /* TDBrowseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBrowseView.m; sourceTree = "<group>"; };
 		A0B8AD511A1DC9980045EFAD /* icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icon.xcassets; sourceTree = "<group>"; };
 		A0BB69981A25DC020018F538 /* TDPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPopView.h; sourceTree = "<group>"; };
 		A0BB69991A25DC020018F538 /* TDPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPopView.m; sourceTree = "<group>"; };
@@ -759,6 +762,8 @@
 				A06797EE1A120564008AC9D8 /* TDDotView.m */,
 				A02E4AC21A0B74D500D4E4D8 /* TDCameraView.h */,
 				A02E4AC31A0B74D500D4E4D8 /* TDCameraView.m */,
+				A0A0BC201AAD71EA008F1C97 /* TDBrowseView.h */,
+				A0A0BC211AAD71EA008F1C97 /* TDBrowseView.m */,
 				A026625C1A134639000F97A9 /* TDLookView.h */,
 				A026625D1A134639000F97A9 /* TDLookView.m */,
 				A0BE6C6D1A14857100E4EC85 /* TDMotionManager.h */,
@@ -1575,6 +1580,7 @@
 				A099CB491A0B6CFB00313401 /* GPUImageDirectionalNonMaximumSuppressionFilter.m in Sources */,
 				A099CB921A0B6CFB00313401 /* GPUImagePoissonBlendFilter.m in Sources */,
 				A099CBBC1A0B6CFB00313401 /* GPUImageTwoInputFilter.m in Sources */,
+				A0A0BC221AAD71EA008F1C97 /* TDBrowseView.m in Sources */,
 				A099CBC71A0B6CFB00313401 /* GPUImageZoomBlurFilter.m in Sources */,
 				A099CBB21A0B6CFB00313401 /* GPUImageTextureOutput.m in Sources */,
 				A099CBA41A0B6CFB00313401 /* GPUImageSingleComponentGaussianBlurFilter.m in Sources */,

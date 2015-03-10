@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 
+
+#ifndef __OPTIMIZE__
+#import "RRFPSBar.h"
+#endif
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +21,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+#ifndef __OPTIMIZE__
+    [[RRFPSBar sharedInstance] setHidden:NO];
+    [RRFPSBar sharedInstance].showsAverage = YES;
+#endif
     return YES;
 }
 
