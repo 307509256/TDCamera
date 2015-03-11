@@ -19,7 +19,7 @@
 #import "DBCameraGridView.h"
 
 // 相机视图高度占屏幕的比率
-#define TD_CAMERA_VIEW_HEIGHT_MULTIPLY 0.7
+#define TD_CAMERA_VIEW_HEIGHT_MULTIPLY [[UIScreen mainScreen] bounds].size.width / [[UIScreen mainScreen] bounds].size.height
 // 最多拍摄照片数量
 #define TD_IMAGE_COUNT 24
 
@@ -47,7 +47,7 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
 
 -(instancetype)initWithDelegate:(id<TDCameraViewControllerDelegate>)delegate{
     CGSize size = [[UIScreen mainScreen] bounds].size;
-    TDCameraView* cameraView = [TDCameraView initWithFrame:CGRectMake(0, 0, size.width, size.height*TD_CAMERA_VIEW_HEIGHT_MULTIPLY)];
+    TDCameraView* cameraView = [TDCameraView initWithFrame:CGRectMake(0, 0, size.width, size.height*TD_CAMERA_VIEW_HEIGHT_MULTIPLY + 88)];
     self = [super initWithDelegate:self cameraView:cameraView];
     if (self) {
         self.delegate_td = delegate;
@@ -151,7 +151,7 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
     [self.view addSubview:bottomBar];
     bottomBar.backgroundColor = [UIColor colorWithRed:51/255.f green:51/255.f blue:51/255.f alpha:0.5];
     [bottomBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@([[UIScreen mainScreen] bounds].size.height * TD_CAMERA_VIEW_HEIGHT_MULTIPLY - 44));
+        make.top.equalTo(@([[UIScreen mainScreen] bounds].size.height * TD_CAMERA_VIEW_HEIGHT_MULTIPLY + 44));
         make.left.equalTo(@0);
         make.right.equalTo(@0);
         make.height.equalTo(@44);
@@ -392,7 +392,7 @@ NSString* const TD_CAMERA_KEY_FPS = @"TD_CAMERA_KEY_FPS";
             make.left.equalTo(@0);
             make.right.equalTo(@0);
             CGSize size = [[UIScreen mainScreen] bounds].size;
-            make.height.equalTo(@(size.height*TD_CAMERA_VIEW_HEIGHT_MULTIPLY));
+            make.height.equalTo(@(size.height*TD_CAMERA_VIEW_HEIGHT_MULTIPLY + 88));
         }];
     }
 }
