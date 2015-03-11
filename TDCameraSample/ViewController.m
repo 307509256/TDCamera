@@ -38,7 +38,12 @@
     // 图片压缩
     NSMutableArray* imagesNormal = [NSMutableArray arrayWithCapacity:images.count];
     for (UIImage* img in images) {
-        [imagesNormal addObject:[UIImage imageWithCGImage:[img scaleToFitSize:[UIScreen mainScreen].bounds.size].CGImage scale:1.0 orientation:UIImageOrientationRight]];
+        UIImage* img_temp = [UIImage imageWithCGImage:img.CGImage scale:1.0 orientation:UIImageOrientationRight];
+        CGFloat sideL = img_temp.size.width < img_temp.size.height ? img_temp.size.width : img_temp.size.height;
+        img_temp = [img_temp cropToSize:CGSizeMake(sideL, sideL) usingMode:NYXCropModeCenter];
+        sideL = sideL < [UIScreen mainScreen].bounds.size.width ? sideL : [UIScreen mainScreen].bounds.size.width;
+        img_temp = [img_temp scaleToFillSize:CGSizeMake(sideL, sideL)];
+        [imagesNormal addObject:img_temp];
     }
     
     TDLookView* lookview = [[TDLookView alloc] initWithImages:imagesNormal];
