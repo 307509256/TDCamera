@@ -22,8 +22,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 #ifndef __OPTIMIZE__
-    [[RRFPSBar sharedInstance] setHidden:NO];
-    [RRFPSBar sharedInstance].showsAverage = YES;
+//    [[RRFPSBar sharedInstance] setHidden:NO];
+//    [RRFPSBar sharedInstance].showsAverage = YES;
 #endif
     return YES;
 }

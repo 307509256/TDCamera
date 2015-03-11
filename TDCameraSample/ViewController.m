@@ -38,7 +38,7 @@
     // 图片压缩
     NSMutableArray* imagesNormal = [NSMutableArray arrayWithCapacity:images.count];
     for (UIImage* img in images) {
-        [imagesNormal addObject:[img scaleToFitSize:[UIScreen mainScreen].bounds.size]];
+        [imagesNormal addObject:[UIImage imageWithCGImage:[img scaleToFitSize:[UIScreen mainScreen].bounds.size].CGImage scale:1.0 orientation:UIImageOrientationRight]];
     }
     
     TDLookView* lookview = [[TDLookView alloc] initWithImages:imagesNormal];
