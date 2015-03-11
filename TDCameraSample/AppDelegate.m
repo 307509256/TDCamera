@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <KMCGeigerCounter.h>
+#import <FLEXManager.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [KMCGeigerCounter sharedGeigerCounter].enabled = YES;
+    [[FLEXManager sharedManager] showExplorer];
     return YES;
 }
 

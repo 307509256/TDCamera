@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "15B9F6AA7D5D8DB3CC072430"
+               BlueprintIdentifier = "37CFBF9269859A43440C7D62"
                BuildableName = "libPods-CMPopTipView.a"
                BlueprintName = "Pods-CMPopTipView"
                ReferencedContainer = "container:Pods.xcodeproj">
