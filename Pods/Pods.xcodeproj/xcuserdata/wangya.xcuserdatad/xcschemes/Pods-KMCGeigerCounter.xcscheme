@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "627C9991E55B22CCAFDB7210"
-               BuildableName = "libPods-RRFPSBar.a"
-               BlueprintName = "Pods-RRFPSBar"
+               BlueprintIdentifier = "D78D0D4A2FC878B6F2F32BD0"
+               BuildableName = "libPods-KMCGeigerCounter.a"
+               BlueprintName = "Pods-KMCGeigerCounter"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

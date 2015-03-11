@@ -15,22 +15,22 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - CMPopTipView (2.2.0)
+  - KMCGeigerCounter (0.2.1)
   - Masonry (0.6.1)
   - NYXImagesKit (2.3)
-  - RRFPSBar (0.0.1)
 
 DEPENDENCIES:
   - BlocksKit (= 2.2.5)
   - CMPopTipView (= 2.2.0)
+  - KMCGeigerCounter (= 0.2.1)
   - Masonry (= 0.6.1)
   - NYXImagesKit (= 2.3)
-  - RRFPSBar (= 0.0.1)
 
 SPEC CHECKSUMS:
   BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
   CMPopTipView: f731ea93316c4f964d3d5d8e71b4ba0ae30bf5a4
+  KMCGeigerCounter: 9f401da4cf6b0f55152f69e75052f2bf49969431
   Masonry: 2cb49fd14d203d2db5ca6bb017135b235dde9980
   NYXImagesKit: 1c9f228ae78fab475d267b3b3a1308e0fba11731
-  RRFPSBar: 3941b5c6986c511fddb8b0e7a666172347d8558d
 
 COCOAPODS: 0.35.0

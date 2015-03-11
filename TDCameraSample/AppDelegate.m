@@ -7,11 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
-
-#ifndef __OPTIMIZE__
-#import "RRFPSBar.h"
-#endif
+#import <KMCGeigerCounter.h>
 
 @interface AppDelegate ()
 
@@ -21,10 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-#ifndef __OPTIMIZE__
-//    [[RRFPSBar sharedInstance] setHidden:NO];
-//    [RRFPSBar sharedInstance].showsAverage = YES;
-#endif
+    [KMCGeigerCounter sharedGeigerCounter].enabled = YES;
     return YES;
 }
 

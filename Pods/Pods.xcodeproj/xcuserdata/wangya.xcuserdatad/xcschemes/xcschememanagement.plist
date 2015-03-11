@@ -14,17 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-KMCGeigerCounter.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-NYXImagesKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-RRFPSBar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,32 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5C37E4EA43A6B2A29C6F2ADB</key>
+		<key>15B9F6AA7D5D8DB3CC072430</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>627C9991E55B22CCAFDB7210</key>
+		<key>1E3B977B51006261ACB62515</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>819FA85886F2C6941EE46B13</key>
+		<key>2C88B9D22550C08621C33C83</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>91A0063F17F2EF8498ACCE07</key>
+		<key>9A18EA1B222B39F6B6F8285A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9C08C625EC16090F036612A3</key>
+		<key>D6A01D7B751DC960ACC4882B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B89FF3186CD90D52363D94E3</key>
+		<key>D78D0D4A2FC878B6F2F32BD0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
