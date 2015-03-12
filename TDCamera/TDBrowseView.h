@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TDBrowseView : UIView
-
+- (instancetype)initWithImages:(NSArray*)images;
 @end

@@ -11,6 +11,7 @@
 #import "TDLookView.h"
 #import "Masonry.h"
 #import "NYXImagesKit.h"
+#import "TDBrowseView.h"
 
 @interface ViewController ()<TDCameraViewControllerDelegate>
 
@@ -62,6 +63,16 @@
         make.right.equalTo(@-20);
         make.bottom.equalTo(@-20);
     }];
+    
+//    TDBrowseView* lookview = [[TDBrowseView alloc] initWithImages:imagesNormal];
+//    lookview.contentMode = UIViewContentModeScaleAspectFit;
+//    [next.view addSubview:lookview];
+//    [lookview mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(@84);
+//        make.left.equalTo(@20);
+//        make.right.equalTo(@-20);
+//        make.bottom.equalTo(@-20);
+//    }];
     
     
     CATransition* transition = [CATransition animation];
