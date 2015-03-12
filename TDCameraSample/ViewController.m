@@ -38,11 +38,19 @@
     // 图片压缩
     NSMutableArray* imagesNormal = [NSMutableArray arrayWithCapacity:images.count];
     for (UIImage* img in images) {
-        UIImage* img_temp = [UIImage imageWithCGImage:img.CGImage scale:1.0 orientation:UIImageOrientationRight];
+        // 裁剪成正放心
+        UIImage* img_temp = [UIImage imageWithCGImage:img.CGImage scale:1.0 orientation:UIImageOrientationUp];
         CGFloat sideL = img_temp.size.width < img_temp.size.height ? img_temp.size.width : img_temp.size.height;
         img_temp = [img_temp cropToSize:CGSizeMake(sideL, sideL) usingMode:NYXCropModeCenter];
+        
+        // 旋转 90度
+        img_temp = [UIImage imageWithCGImage:img_temp.CGImage scale:1.0 orientation:UIImageOrientationRight];
+        
+        // 缩放像素
         sideL = sideL < [UIScreen mainScreen].bounds.size.width ? sideL : [UIScreen mainScreen].bounds.size.width;
         img_temp = [img_temp scaleToFillSize:CGSizeMake(sideL, sideL)];
+        
+        
         [imagesNormal addObject:img_temp];
     }
     
