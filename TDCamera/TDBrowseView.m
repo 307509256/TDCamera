@@ -120,7 +120,7 @@
 
 @interface TDBrowseView (){
     NSArray* _images;
-    double _roll;
+    NSNumber* _roll;
 }
 @end
 
@@ -143,7 +143,7 @@ static NSUInteger _TDBrowseViewCount = 0;
                 _TDMotionManager = nil;
                 NSLog(@"设备不支持该功能");
             }
-            _TDMotionManager.deviceMotionUpdateInterval = 1.0/60;
+            _TDMotionManager.deviceMotionUpdateInterval = 0.1;
         });
         
         _TDBrowseViewCount ++;
@@ -151,8 +151,6 @@ static NSUInteger _TDBrowseViewCount = 0;
             [_TDMotionManager startDeviceMotionUpdates];
             NSLog(@"开启 陀螺仪 记录");
         }
-        
-        _roll = _TDMotionManager.deviceMotion.attitude.roll;
         
         CADisplayLink* displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
         [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
@@ -166,16 +164,21 @@ static NSUInteger _TDBrowseViewCount = 0;
 }
 
 #define TD_ANGLE (double)M_PI_4
+#define TD_ALPHA_COUNT 2
 
 - (void)drawRect:(CGRect)rect {
+    if (_roll == nil && _TDMotionManager.deviceMotion != nil) {
+        _roll = [NSNumber numberWithDouble:_TDMotionManager.deviceMotion.attitude.roll];
+    }
 #warning 图片渲染顺序错误
+    double roll = [_roll doubleValue];
     double roll_new = _TDMotionManager.deviceMotion.attitude.roll;
-    double difference_roll = roll_new - _roll;
+    double difference_roll = roll_new - roll;
     // 超出范围
     if (fabs(difference_roll) >= TD_ANGLE / 2) {
         UIImage* image = difference_roll > 0 ? [_images lastObject] : [_images firstObject];
         [image drawInRect:rect contentMode:self.contentMode alpha:1.0];
-        _roll = roll_new;
+        _roll = [NSNumber numberWithDouble:difference_roll > 0 ? roll_new - TD_ANGLE / 2 : roll_new + TD_ANGLE / 2];
         return;
     }
     // 只有一张图片
@@ -196,7 +199,8 @@ static NSUInteger _TDBrowseViewCount = 0;
     
     if (index_image + 1 <= _images.count - 1) {
         UIImage* second_image = [_images objectAtIndex:index_image+1];
-        [second_image drawInRect:rect contentMode:self.contentMode alpha:roll_little / roll_for_a_image];
+        CGFloat alpha = ((NSInteger)(roll_little / roll_for_a_image) / (1.0 / TD_ALPHA_COUNT)) * (1.0 / TD_ALPHA_COUNT + 1);
+        [second_image drawInRect:rect contentMode:self.contentMode alpha:alpha];
     }
 }
 
